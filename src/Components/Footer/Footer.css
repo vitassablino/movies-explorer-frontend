@@ -58,5 +58,5 @@
     font-size: 13px;
     text-decoration: none;
     color: white;
-    transition: opacity 0.3s;
+    transition: opacity .3s ease-in-out;
   }

@@ -9,13 +9,22 @@ import { CurrentUserContext } from "../Context/CurrentUserContext";
 function App() {
   /* Хуки */
   const [currentUser, setCurrentUser] = useState({}); // Текущий пользователь
-  const [loggedIn, setLoggedIn] = useState(false); // Статус авторизации
+  const [loggedIn, setLoggedIn] = useState(true); // Статус авторизации
+  const [isMenuOpen, setMenuStatus] = useState(false);
+
+  /* Обработчики */
+  /* Открытие меню */
+  function handleOpenMenu() {
+    setMenuStatus(!isMenuOpen);
+  }
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
-      <div className="app__content">
+      <div className="body">
          <Header
          loggedIn={loggedIn}
+         onBurgerClick={handleOpenMenu}
+         isMenuOpen = {isMenuOpen}
           />
         <Footer />  
       </div>

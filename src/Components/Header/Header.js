@@ -1,18 +1,11 @@
-// IMPORT PACKAGES
 import { Link, useLocation } from "react-router-dom";
-
-// IMPORT STYLES
 import "./Header.css";
-
-// IMPORT COMPONENTS
 import Logo from "../Logo/Logo";
-/* import Navigation from "../Navigation/Navigation";
-import AccountLink from "../AccountLink/AccountLink"; */
+import Navigation from "../Navigation/Navigation";
+import AccountBtn from "../AccountBtn/AccountBtn"
 
-// HEADER COMPONENT
-function Header({ onHamburgerClick, loggedIn }) {
-  // HOOKS
-  const location = useLocation();
+function Header({ onBurgerClick, loggedIn, isMenuOpen }) {
+/* Хуки */
 
   return (
     <header className="header">
@@ -21,12 +14,15 @@ function Header({ onHamburgerClick, loggedIn }) {
           className="header__wrapper"
         >
           <Logo />
-
+          <Navigation
+          isMenuOpen = {isMenuOpen}
+          />
+          <AccountBtn />
           <button
-            className="header__btn-hamburger hover-button"
+            className="header__btn-burger hover-button"
             type="button"
-            aria-label="Меню навигации"
-            onClick={onHamburgerClick}
+            aria-label="Меню"
+            onClick={onBurgerClick}
           ></button>
         </div>
       ) : (
