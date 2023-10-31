@@ -3,6 +3,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import "./App.css";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import Main from "../Main/Main";
 
 import { CurrentUserContext } from "../Context/CurrentUserContext";
 
@@ -26,6 +27,9 @@ function App() {
          onBurgerClick={handleOpenMenu}
          isMenuOpen = {isMenuOpen}
           />
+
+        <Main />
+
         <Footer />  
       </div>
     </CurrentUserContext.Provider>
