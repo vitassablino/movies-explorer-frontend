@@ -49,8 +49,14 @@
   margin-right: 8px;
   border: none;
   cursor: pointer;
-	transition: opacity .3s ease-in-out;
+	
   background: url("../../images/burger_menu_icon.svg") center center/cover
+}
+
+.header__btn-burger:hover {
+  transition:  .3s ease-in-out;
+  opacity: 0.8;
+  transform: scale(1.2);
 }
 
 @media screen and (max-width: 768px) {
