@@ -2,8 +2,13 @@
     width: max-content;
     display: block;
     text-decoration: none;
-    transition: var(--opacity);
+
   }
+  .logo:hover {
+    transition: .3s ease-in;
+    transform: scale(1.1);
+  }
+
   
   .logo__img {
     width: 38px;

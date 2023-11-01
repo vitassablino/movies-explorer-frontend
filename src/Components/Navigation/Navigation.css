@@ -26,9 +26,15 @@
     line-height: 1.38;
     text-decoration: none;
     color: white;
-    transition: opacity 0.3s;
+    
   }
   
+  .navigation__link:hover {
+    transition: .5s ease-in-out;
+    opacity: 0.5;
+  }
+
+ 
   .navigation__link_place_side-menu {
     font-size: 18px;
     font-weight: 500;

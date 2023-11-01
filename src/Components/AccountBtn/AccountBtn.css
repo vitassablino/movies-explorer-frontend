@@ -1,7 +1,6 @@
 .account-btn {
     border-radius: 50px;
     padding-left: 11px;
-    
 
     font-family: "Inter", "Arial", sans-serif;
     font-size: 14px;
@@ -17,6 +16,11 @@
     
   }
 
+  .account-btn:hover {
+    transition: .3s ease;
+    background-color: rgba(170, 141, 141, 0.5);
+  }
+
   .account-icon {
     background: url("../../images/icon-main.svg") center no-repeat;
     background-color: #0F4157;
@@ -30,6 +34,8 @@
     margin-left: 5px;
     
   }
+
+
     
   @media screen and (max-width: 768px) {
     .account-btn_hidden {

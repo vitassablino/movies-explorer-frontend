@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-/* import { Route, Routes, useNavigate } from "react-router-dom"; */
+import { Route, Routes, useNavigate } from "react-router-dom";
 import "./App.css";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
