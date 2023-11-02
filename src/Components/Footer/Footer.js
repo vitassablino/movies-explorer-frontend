@@ -13,7 +13,7 @@ function Footer() {
         <ul className="footer__list">
           <li className="footer__list-item">
             <a
-              className="footer__link hover-link"
+              className="footer__link"
               href="https://practicum.yandex.ru/"
               target="_blank"
               rel="noreferrer"
@@ -23,7 +23,7 @@ function Footer() {
           </li>
           <li className="footer__list-item">
             <a
-              className="footer__link hover-link"
+              className="footer__link"
               href="https://github.com/vitassablino"
               target="_blank"
               rel="noreferrer"

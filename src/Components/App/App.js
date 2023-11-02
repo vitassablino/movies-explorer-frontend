@@ -4,6 +4,7 @@ import "./App.css";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Main from "../Main/Main";
+import SideMenu from "../SideMenu/SideMenu";
 
 import { CurrentUserContext } from "../Context/CurrentUserContext";
 
@@ -13,10 +14,16 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(true); // Статус авторизации
   const [isMenuOpen, setMenuStatus] = useState(false);
 
+
   /* Обработчики */
   /* Открытие меню */
   function handleOpenMenu() {
     setMenuStatus(!isMenuOpen);
+  }
+
+  /* Закрытие меню */
+  function handleCloseMenu() {
+    setMenuStatus(false);
   }
 
   return (
@@ -31,6 +38,10 @@ function App() {
         <Main />
 
         <Footer />  
+        <SideMenu
+            isSideMenuOpen={isMenuOpen}
+            onClose={handleCloseMenu}
+          />
       </div>
     </CurrentUserContext.Provider>
   );

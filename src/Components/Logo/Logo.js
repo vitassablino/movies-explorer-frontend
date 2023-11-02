@@ -7,7 +7,7 @@ function Logo({ place }) {
       to="/"
       className={`logo ${
         place === "auth" ? "logo_place_auth" : ""
-      } hover-button`}
+      }`}
       aria-label="Главная страница"
     >
       <div className="logo__img"></div>

@@ -5,7 +5,6 @@ import Navigation from "../Navigation/Navigation";
 import AccountBtn from "../AccountBtn/AccountBtn"
 
 function Header({ onBurgerClick, loggedIn, isMenuOpen }) {
-/* Хуки */
 
   return (
     <header className="header">
@@ -13,13 +12,18 @@ function Header({ onBurgerClick, loggedIn, isMenuOpen }) {
         <div
           className="header__wrapper"
         >
+          <div className="header_navigation">
           <Logo />
+          <div className={`"" ${isMenuOpen ? "header_navigation_hidden" : ""}`}>
           <Navigation
           isMenuOpen = {isMenuOpen}
           />
+          </div>
+          
+          </div>          
           <AccountBtn />
           <button
-            className="header__btn-burger hover-button"
+            className="header__btn-burger"
             type="button"
             aria-label="Меню"
             onClick={onBurgerClick}
@@ -31,14 +35,14 @@ function Header({ onBurgerClick, loggedIn, isMenuOpen }) {
           <nav className="header__menu">
             <ul className="header__menu-wrapper">
               <li className="header__menu-item">
-                <Link to="/signup" className="header__link hover-link">
+                <Link to="/signup" className="header__link">
                   Регистрация
                 </Link>
               </li>
               <li className="header__menu-item">
                 <Link
                   to="/signin"
-                  className="header__link header__link_type_login hover-button"
+                  className="header__link header__link_type_login"
                 >
                   Войти
                 </Link>
