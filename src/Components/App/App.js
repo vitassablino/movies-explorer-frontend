@@ -5,7 +5,7 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Main from "../Main/Main";
 import SideMenu from "../SideMenu/SideMenu";
-
+import { Provider } from 'react-redux'
 import { CurrentUserContext } from "../Context/CurrentUserContext";
 
 function App() {
@@ -27,6 +27,7 @@ function App() {
   }
 
   return (
+    <Provider storage = {storage}>
     <CurrentUserContext.Provider value={currentUser}>
       <div className="body">
          <Header
@@ -44,6 +45,7 @@ function App() {
           />
       </div>
     </CurrentUserContext.Provider>
+    </Provider>
   );
 }
 
