@@ -2,6 +2,10 @@
   max-width: 100%;
 }
 
+.footer_disabled {
+  display: none;
+}
+
 .footer__wrapper {
   max-width: 1280px;
   display: grid;

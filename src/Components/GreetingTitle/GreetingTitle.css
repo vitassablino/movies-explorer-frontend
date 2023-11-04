@@ -8,12 +8,12 @@
     color: white;
   }
   
-  .greeteing-title_edit-profile {
+  .greeteing-title_user-edit {
     text-align: center;
   }
   
   @media screen and (max-width: 720px) {
-    .edit-profile {
+    .user-edit {
       margin-top: 50px;
       margin-bottom: 80px;
       text-align: center;

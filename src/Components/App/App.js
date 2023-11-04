@@ -5,48 +5,56 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Main from "../Main/Main";
 import SideMenu from "../SideMenu/SideMenu";
-import { Provider } from 'react-redux'
+/* import { Provider } from 'react-redux' */
 import { CurrentUserContext } from "../Context/CurrentUserContext";
+import User from "../User/User";
+
 
 function App() {
-  /* Хуки */
-  const [currentUser, setCurrentUser] = useState({}); // Текущий пользователь
-  const [loggedIn, setLoggedIn] = useState(true); // Статус авторизации
-  const [isMenuOpen, setMenuStatus] = useState(false);
+	/* Хуки */
+	const [currentUser, setCurrentUser] = useState({}); // Текущий пользователь
+	const [loggedIn, setLoggedIn] = useState(true); // Статус авторизации
+	const [isMenuOpen, setMenuStatus] = useState(false);
+	const aboutOnClickRef = useRef(null);
+  const [isLoading, setLoading] = useState(false);
+
+	/* Обработчики */
+	/* Открытие меню */
+	function handleOpenMenu() {
+		setMenuStatus(!isMenuOpen);
+	}
+
+	/* Закрытие меню */
+	function handleCloseMenu() {
+		setMenuStatus(false);
+	}
+
+  /* Обновление данных пользователя */
+ 
 
 
-  /* Обработчики */
-  /* Открытие меню */
-  function handleOpenMenu() {
-    setMenuStatus(!isMenuOpen);
-  }
+	return (
+		/*  <Provider storage = {storage}> */
 
-  /* Закрытие меню */
-  function handleCloseMenu() {
-    setMenuStatus(false);
-  }
+		<div className="body">
+			<CurrentUserContext.Provider value={currentUser}>
+				<Header
+					loggedIn={loggedIn}
+					onBurgerClick={handleOpenMenu}
+					isMenuOpen={isMenuOpen}
+				/>
+				<Routes>
+					<Route index element={<Main aboutRef={aboutOnClickRef} />} />
+          <Route path="/user" element={<User  onLoading={isLoading} />} />
+				</Routes>
+        {loggedIn && <Footer />}
+				<SideMenu isSideMenuOpen={isMenuOpen} onClose={handleCloseMenu} />
+			</CurrentUserContext.Provider>
+		</div>
 
-  return (
-    <Provider storage = {storage}>
-    <CurrentUserContext.Provider value={currentUser}>
-      <div className="body">
-         <Header
-         loggedIn={loggedIn}
-         onBurgerClick={handleOpenMenu}
-         isMenuOpen = {isMenuOpen}
-          />
-
-        <Main />
-
-        <Footer />  
-        <SideMenu
-            isSideMenuOpen={isMenuOpen}
-            onClose={handleCloseMenu}
-          />
-      </div>
-    </CurrentUserContext.Provider>
-    </Provider>
-  );
+		/* </Provider> */
+	);
 }
 
 export default App;
+

@@ -1,8 +1,12 @@
 import "./Footer.css";
+import {useLocation } from "react-router-dom";
 
 function Footer() {
+  const location = useLocation();
   return (
-    <footer className="footer">
+    <footer className={`footer ${
+      location.pathname !== "/user" ? "" : "footer_disabled"
+    }`}>
       <div className="footer__wrapper">
         <p className="footer__text">
           Учебный проект Яндекс.Практикум х BeatFilm.

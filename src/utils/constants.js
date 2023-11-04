@@ -1,1 +1,1 @@
-export const REG_EXP = "^[A-Za-zА-Яа-яЁё\\-\\s]+$";
+export const REG_EXP = "^[A-Za-z\\-\\s]+$";

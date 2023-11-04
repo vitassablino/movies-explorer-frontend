@@ -4,14 +4,14 @@ import "./AccountBtn.css";
 function AccountBtn({ isMenuOpen, onClose }) {
 	return (
 		<Link
-			to="/profile"
+			to="/user"
 			onClick={onClose}
 			className={`account-btn ${
 				isMenuOpen ? "account-btn_side-menu" : "account-btn_hidden"
 			}`}
 		>
 			Аккаунт
-			<div className="account-icon"></div>
+			<div className="account-icon"/>
 		</Link>
 	);
 }

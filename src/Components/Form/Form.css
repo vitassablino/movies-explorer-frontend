@@ -4,7 +4,7 @@
     flex-direction: column;
   }
   
-  .form_type_edit-profile {
+  .form__input_user-edit {
     padding-top: 83px;
   }
   
@@ -16,7 +16,7 @@
     font-family: "Inter", "Arial", sans-serif;
     font-size: 10px;
     font-weight: 400;
-    line-height: 1.2;
+    line-height: 12.1px;
     color: #8b8b8b;
   }
   
@@ -24,19 +24,19 @@
     padding-top: 0;
   }
   
-  .form__input-wrapper_type_edit-profile {
+  .form__input-wrapper_user-edit {
     flex-direction: row;
     align-items: center;
     padding-top: 17px;
     padding-bottom: 15px;
     border-bottom: 1px solid #424242;
     font-size: 11px;
-    font-weight: 500;
-    line-height: 1.18;
+    font-weight: 400;
+    line-height: 12.1px;
     color: white;
   }
   
-  .form__input-wrapper_type_edit-profile:last-of-type {
+  .form__input-wrapper_user-edit:last-of-type {
     border-bottom: none;
   }
   
@@ -54,10 +54,11 @@
     font-weight: 500;
     line-height: 1.21;
     color: white;
+    
   }
   
-  .form__input_type_edit-profile {
-    width: 350px;
+  .form__input_user-edit {
+    width: 100px;
     padding-top: 0;
     padding-bottom: 0;
     border-bottom-color: transparent;
@@ -112,7 +113,7 @@
     color: red;
   }
   
-  .form__input-error_type_edit-profile {
+  .form__input-error_user-edit {
     margin-top: 2px;
     margin-bottom: 2px;
   }
@@ -121,7 +122,7 @@
     opacity: 1;
   }
   
-  .form__btn-submit {
+  .form__submit-btn {
     width: 100%;
     height: 45px;
     padding: 0;
@@ -134,33 +135,33 @@
     font-size: 14px;
     font-weight: 500;
     line-height: 1.21;
-    color: var(--white);
+    color: white;
   }
   
-  .form__btn-submit:disabled {
+  .form__submit-btn:disabled {
     background-color: #f8f8f8;
     color: #c2c2c2;
     pointer-events: none;
   }
   
-  .form__btn-submit_type_registr {
+  .form__submit-btn_registr {
     margin-top: 128px;
   }
   
-  .form__btn-submit_type_login {
+  .form__submit-btn_login {
     margin-top: 198px;
   }
   
-  .form__btn-submit_type_edit-profile {
+  .form__submit-btn_user-edit {
     margin-top: 85px;
   }
   
-  .form__btn-submit_hidden {
+  .form__submit-btn_hidden {
     display: none;
   }
   
-  @media screen and (max-width: 990px) {
-    .form_type_edit-profile {
+  @media screen and (max-width: 900px) {
+    .form_user-edit {
       padding-top: 56px;
     }
   
@@ -169,29 +170,29 @@
     }
   }
   
-  @media screen and (max-width: 620px) {
-    .form_type_edit-profile {
+  @media screen and (max-width: 660px) {
+    .form_user-edit {
       padding-top: 0;
     }
   
-    .form__input_type_edit-profile {
-      width: 200px;
+    .form__input_user-edit {
+      width: 50px;
     }
-  
-    .form__btn-submit {
+
+    .form__submit-btn {
       font-size: 12px;
       line-height: 1.25;
     }
   
-    .form__btn-submit_type_registr {
+    .form__submit-btn_registr {
       margin-top: 216px;
     }
   
-    .form__btn-submit_type_login {
+    .form__submit-btn_login {
       margin-top: 285px;
     }
   
-    .form__btn-submit_type_edit-profile {
+    .form__submit-btn_user-edit {
       margin-top: 256px;
     }
   }
