@@ -35,7 +35,7 @@ function Form({
           name === "user-edit" && !isTyping
             ? "form__submit-btn_hidden"
             : ""
-        } hover-button`}
+        }`}
         disabled={handleDisableButton()}
       >
         {buttonText}

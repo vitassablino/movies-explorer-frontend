@@ -16,7 +16,7 @@
     background: url("../../images/logo.svg") center center/cover no-repeat;
   }
   
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 320px) {
     .logo_place_auth {
       margin: 0 auto;
     }

@@ -14,7 +14,7 @@ function SideMenu({ isSideMenuOpen, onClose }) {
         }`}
       >
         <button
-          className="side-menu__btn-close hover-button"
+          className="side-menu__btn-close"
           type="button"
           aria-label="Закрыть"
           onClick={onClose}

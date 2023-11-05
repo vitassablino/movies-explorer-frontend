@@ -8,15 +8,16 @@ import SideMenu from "../SideMenu/SideMenu";
 /* import { Provider } from 'react-redux' */
 import { CurrentUserContext } from "../Context/CurrentUserContext";
 import User from "../User/User";
+import Signup from "../Signup/Signup";
+import Signin from "../Signin/Signin";
 
 
 function App() {
 	/* Хуки */
 	const [currentUser, setCurrentUser] = useState({}); // Текущий пользователь
-	const [loggedIn, setLoggedIn] = useState(true); // Статус авторизации
-	const [isMenuOpen, setMenuStatus] = useState(false);
+	const [loggedIn, setLoggedIn] = useState(false); // Статус авторизации
+	const [isMenuOpen, setMenuStatus] = useState(false); //Статус бокового меню
 	const aboutOnClickRef = useRef(null);
-  const [isLoading, setLoading] = useState(false);
 
 	/* Обработчики */
 	/* Открытие меню */
@@ -45,7 +46,9 @@ function App() {
 				/>
 				<Routes>
 					<Route index element={<Main aboutRef={aboutOnClickRef} />} />
-          <Route path="/user" element={<User  onLoading={isLoading} />} />
+          <Route path="/user" element={<User />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/signin" element={<Signin />} />
 				</Routes>
         {loggedIn && <Footer />}
 				<SideMenu isSideMenuOpen={isMenuOpen} onClose={handleCloseMenu} />

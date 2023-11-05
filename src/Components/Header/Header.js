@@ -5,9 +5,15 @@ import Navigation from "../Navigation/Navigation";
 import AccountBtn from "../AccountBtn/AccountBtn";
 
 function Header({ onBurgerClick, loggedIn, isMenuOpen }) {
-  const location = useLocation();
+	const location = useLocation();
 	return (
-		<header className="header">
+		<header
+			className={`header ${
+				location.pathname !== "/signup" && location.pathname !== "/signin"
+					? ""
+					: "header_disabled"
+			}`}
+		>
 			{loggedIn ? (
 				<div
 					className={`header__wrapper ${
@@ -31,7 +37,11 @@ function Header({ onBurgerClick, loggedIn, isMenuOpen }) {
 					></button>
 				</div>
 			) : (
-				<div className="header__wrapper">
+				<div
+					className={`header__wrapper ${
+						location.pathname === "/" ? "header__wrapper_main-color" : ""
+					}`}
+				>
 					<Logo />
 					<nav className="header__menu">
 						<ul className="header__menu-wrapper">

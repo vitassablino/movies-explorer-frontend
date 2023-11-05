@@ -4,7 +4,7 @@ function GreeteingTitle({ title, place }) {
   return (
     <h1
       className={`greeteing-title ${
-        place === "user-edit" ? "greeteing-title_user-edit" : ""
+        place === "user" ? "greeteing-title_user-edit" : ""
       }`}
     >
       {title}

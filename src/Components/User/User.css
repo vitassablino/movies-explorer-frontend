@@ -5,7 +5,7 @@
   .user__wrapper {
     max-width: 470px;
     margin: 0 auto;
-    padding: 35px 30px 70px;
+    padding: 34px 30px 70px;
     box-sizing: border-box;
     background-color: #202020;
   }
@@ -16,7 +16,7 @@
     flex-direction: column;
     align-items: center;
     gap: 16px;
-    margin-top: 18px;
+    margin-top: 200px;
   }
   
   .user__btns-wrapper_hidden {
@@ -50,25 +50,30 @@
     color: #EE3465;
   }
   
-  @media screen and (max-width: 990px) {
+  @media screen and (max-width: 768px) {
     .user__wrapper {
-      padding-top: 197px;
+      padding-top: 196px;
       padding-bottom: 269px;
     }
   
     .user__btns-wrapper {
-      margin-top: 20px;
+      margin-top: 170px;
     }
+
   }
   
-  @media screen and (max-width: 620px) {
+  @media screen and (max-width: 320px) {
     .user__wrapper {
-      padding-top: 21px;
+      padding-top: 20px;
       padding-bottom: 40px;
     }
   
     .user__btn-action {
       font-size: 12px;
-      line-height: 1.25;
+      line-height: 14.52px;
+    }
+
+    .user__btns-wrapper {
+      margin-top: 340px;
     }
   }

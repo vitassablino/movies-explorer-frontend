@@ -14,11 +14,11 @@ function useFormValidation() {
     const { value, name } = target;
     if (name === "name" && target.validity.patternMismatch) {
       target.setCustomValidity(
-        "Имя должно содержать только кириллицу, латиницу, пробел или дефис."
+        "Недопустимое имя пользователя."
       );
     } else if (name === "email" && !isEmail(value)) {
       target.setCustomValidity(
-        "Необходимо указать e-mail в формате name@domain.zone"
+        "Недопустимый e-mail пользователя."
       );
     } else {
       target.setCustomValidity("");
