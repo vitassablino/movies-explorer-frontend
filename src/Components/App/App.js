@@ -10,14 +10,20 @@ import { CurrentUserContext } from "../Context/CurrentUserContext";
 import User from "../User/User";
 import Signup from "../Signup/Signup";
 import Signin from "../Signin/Signin";
+import Movies from "../Movies/Movies";
 
+import initialCards from "../../utils/initialCard"
 
 function App() {
 	/* Хуки */
 	const [currentUser, setCurrentUser] = useState({}); // Текущий пользователь
-	const [loggedIn, setLoggedIn] = useState(false); // Статус авторизации
+	const [loggedIn, setLoggedIn] = useState(true); // Статус авторизации
 	const [isMenuOpen, setMenuStatus] = useState(false); //Статус бокового меню
 	const aboutOnClickRef = useRef(null);
+	const [isFilterOn, setFilter] = useState(false); //Статус свича фильтра
+	const [cards, setCards] = useState([]); //установка карточек для рендера
+	const [savedCards, setSavedCards] = useState([]);
+	const [isLiked, setLike] = useState(false);
 
 	/* Обработчики */
 	/* Открытие меню */
@@ -30,9 +36,25 @@ function App() {
 		setMenuStatus(false);
 	}
 
-  /* Обновление данных пользователя */
- 
+	/* Обновление данных пользователя */
 
+	/* Изменение свича фильтра */
+	function handleFilterChange(evt) {
+		console.log('switch filter')
+		setFilter(evt);
+	  }
+
+	  /* Установка стартовых карточек */
+	  useEffect(() => {
+		setCards(initialCards);
+		setSavedCards(savedCards);
+	  }, []);
+
+	  /* Лайк */
+	  function handleCardLike() {
+		console.log("like")
+		setLike(!isLiked);
+	  }
 
 	return (
 		/*  <Provider storage = {storage}> */
@@ -46,11 +68,23 @@ function App() {
 				/>
 				<Routes>
 					<Route index element={<Main aboutRef={aboutOnClickRef} />} />
-          <Route path="/user" element={<User />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/signin" element={<Signin />} />
+					<Route path="/user" element={<User />} />
+					<Route path="/signup" element={<Signup />} />
+					<Route path="/signin" element={<Signin />} />
+					<Route
+						path="/movies"
+						element={
+							<Movies
+								cards={cards}
+								onFilterChange={handleFilterChange}
+								isFilterOn={isFilterOn}
+								isLiked={isLiked}
+								onCardLike={handleCardLike}
+							/>
+						}
+					/>
 				</Routes>
-        {loggedIn && <Footer />}
+				{loggedIn && <Footer />}
 				<SideMenu isSideMenuOpen={isMenuOpen} onClose={handleCloseMenu} />
 			</CurrentUserContext.Provider>
 		</div>
@@ -60,4 +94,3 @@ function App() {
 }
 
 export default App;
-
