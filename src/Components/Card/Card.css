@@ -84,8 +84,9 @@
     }
   
     .card__caption {
-      height: 30px;
+      height: 15px;
       gap: 36px;
+      margin-top: 14px;
     }
   
     .card__name {
@@ -94,7 +95,7 @@
     }
   
     .card__time {
-      margin-top: 19px;
+      margin-top: 14px;
       font-size: 10px;
       line-height: 1.2;
     }

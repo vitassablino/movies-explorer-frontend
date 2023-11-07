@@ -1,7 +1,7 @@
 .search-form {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 60px 70px 10px;
+     padding: 60px 70px 10px;
     box-sizing: border-box;
     background-color: #202020;
   }
@@ -55,15 +55,16 @@
   
   @media screen and (max-width: 1000px) {
     .search-form {
-      padding-top: 60px;
+      padding-top: 80px;
       padding-right: 30px;
       padding-left: 30px;
+      padding-bottom: 0;
     }
   
     .search-form__form {
       flex-direction: column;
       gap: 39px;
-      padding-bottom: 56px;
+      padding-bottom: 50px;
     }
   
     .search-form__search {
@@ -74,13 +75,13 @@
   
   @media screen and (max-width: 765px) {
     .search-form {
-      padding-right: 10px;
-      padding-left: 10px;
+      padding-right: 14px;
+      padding-left: 14px;
     }
   
     .search-form__form {
-      gap: 46px;
-      padding-bottom: 44px;
+      gap: 42px;
+      padding-bottom: 49px;
     }
   
   
