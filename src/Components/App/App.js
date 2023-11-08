@@ -11,90 +11,100 @@ import User from "../User/User";
 import Signup from "../Signup/Signup";
 import Signin from "../Signin/Signin";
 import Movies from "../Movies/Movies";
-import { useContext } from 'react';
+import { useContext } from "react";
+import SavedMovies from "../SavedMovies/SavedMovies";
 
+import initialCards from "../../utils/initialCard";
+import savedInitialCards from "../../utils/savedInitialCards";
 
-
-import initialCards from "../../utils/initialCard"
 
 function App() {
-	/* Хуки */
-	const [currentUser, setCurrentUser] = useState({}); // Текущий пользователь
-	const [loggedIn, setLoggedIn] = useState(true); // Статус авторизации
-	const [isMenuOpen, setMenuStatus] = useState(false); //Статус бокового меню
-	const aboutOnClickRef = useRef(null);
-	const [isFilterOn, setFilter] = useState(false); //Статус свича фильтра
-	const [cards, setCards] = useState([]); //установка карточек для рендера
-	const [savedCards, setSavedCards] = useState([]);
-/* 	const [isLiked, setLike] = useState(false); */
+  /* Хуки */
+  const [currentUser, setCurrentUser] = useState({}); // Текущий пользователь
+  const [loggedIn, setLoggedIn] = useState(true); // Статус авторизации
+  const [isMenuOpen, setMenuStatus] = useState(false); //Статус бокового меню
+  const aboutOnClickRef = useRef(null);
+  const [isFilterOn, setFilter] = useState(false); //Статус свича фильтра
+  const [cards, setCards] = useState([]); //установка карточек для рендера
+  const [savedCards, setSavedCards] = useState([]);
+  /* 	const [isLiked, setLike] = useState(false); */
 
-	/* Обработчики */
-	/* Открытие меню */
-	function handleOpenMenu() {
-		setMenuStatus(!isMenuOpen);
-	}
+  /* Обработчики */
+  /* Открытие меню */
+  function handleOpenMenu() {
+    setMenuStatus(!isMenuOpen);
+  }
 
-	/* Закрытие меню */
-	function handleCloseMenu() {
-		setMenuStatus(false);
-	}
+  /* Закрытие меню */
+  function handleCloseMenu() {
+    setMenuStatus(false);
+  }
 
-	/* Обновление данных пользователя */
+  /* Обновление данных пользователя */
 
-	/* Изменение свича фильтра */
-	function handleFilterChange(evt) {
-		console.log('switch filter')
-		setFilter(evt);
-	  }
+  /* Изменение свича фильтра */
+  function handleFilterChange(evt) {
+    console.log("switch filter");
+    setFilter(evt);
+  }
 
-	  /* Установка стартовых карточек */
-	  useEffect(() => {
-		setCards(initialCards);
-		setSavedCards(savedCards);
-	  }, []);
+  /* Установка стартовых карточек */
+  useEffect(() => {
+    setCards(initialCards);
+    setSavedCards(savedInitialCards);
+  }, []);
 
-	  /* Лайк */
-/* 	  function handleCardLike() {
+  /* Лайк */
+  /* 	  function handleCardLike() {
 		console.log("like")
 		setLike(!isLiked);
 	  } */
 
+  return (
+    /*  <Provider storage = {storage}> */
 
-	return (
-		/*  <Provider storage = {storage}> */
-
-		<div className="body">
-			<CurrentUserContext.Provider value={currentUser}>
-				<Header
-					loggedIn={loggedIn}
-					onBurgerClick={handleOpenMenu}
-					isMenuOpen={isMenuOpen}
-				/>
-				<Routes>
-					<Route index element={<Main aboutRef={aboutOnClickRef} />} />
-					<Route path="/user" element={<User />} />
-					<Route path="/signup" element={<Signup />} />
-					<Route path="/signin" element={<Signin />} />
-					<Route
-						path="/movies"
-						element={
-							<Movies
-								cards={cards}
-								onFilterChange={handleFilterChange}
-								isFilterOn={isFilterOn}
-								/* isLiked={isLiked}
+    <div className="body">
+      <CurrentUserContext.Provider value={currentUser}>
+        <Header
+          loggedIn={loggedIn}
+          onBurgerClick={handleOpenMenu}
+          isMenuOpen={isMenuOpen}
+        />
+        <Routes>
+          <Route index element={<Main aboutRef={aboutOnClickRef} />} />
+          <Route path="/user" element={<User />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/signin" element={<Signin />} />
+          <Route
+            path="/movies"
+            element={
+              <Movies
+                cards={cards}
+                onFilterChange={handleFilterChange}
+                isFilterOn={isFilterOn}
+                /* isLiked={isLiked}
 								onCardLike={handleCardLike} */
-							/>
-						}
-					/>
-				</Routes>
-				{loggedIn && <Footer />}
-				<SideMenu isSideMenuOpen={isMenuOpen} onClose={handleCloseMenu} />
-			</CurrentUserContext.Provider>
-		</div>
+              />
+            }
+          />
+          <Route
+            path="/saved-movies"
+            element={
+              <SavedMovies
+                cards={savedCards}
+                onFilterChange={handleFilterChange}
+                isFilterOn={isFilterOn}
+              />
+            }
+          />
+        </Routes>
+        {loggedIn && <Footer />}
+        <SideMenu isSideMenuOpen={isMenuOpen} onClose={handleCloseMenu} />
+      </CurrentUserContext.Provider>
+    </div>
 
-		/* </Provider> */
-	);
+    /* </Provider> */
+  );
 }
 
 export default App;

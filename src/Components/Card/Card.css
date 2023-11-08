@@ -40,6 +40,16 @@
     cursor: pointer;
   }
   
+.card__btn_delete {
+  opacity: 0;
+  width: 30px;
+  height: 30px;
+}
+  
+.card:hover .card__btn_delete {
+  opacity: 1;
+}
+
   .card__like-btn-img {
     width: 14px;
     height: 12px;
@@ -59,7 +69,27 @@
   .card__like-btn-img_active {
     background-image: url("../../images/like_active.svg");
   }
-  
+
+  .card__delete-btn-img {
+      width: 7px;
+      height: 7px;
+      fill: none;
+      background-image: url("../../images/cross.svg");
+     /*  background-position: 50% 50%; */
+     background-position-y: 0;
+      background-repeat: no-repeat;
+      background-size: contain;
+     /*  padding-right: 42px; */
+      transition: 0.3s ease-out;
+      position: relative;
+      top: -8px;
+      left: -7px;
+  }
+
+  .card__delete-btn-img:hover {
+    scale: 1.2;
+}
+
   .card__time {
     padding-top: 0px;
     margin-top: 17px;
@@ -98,6 +128,15 @@
       margin-top: 14px;
       font-size: 10px;
       line-height: 1.2;
+    }
+
+    .card__btn_delete {
+      opacity: 1;     
+    }
+
+    .card__delete-btn-img {
+      /* top: 0; */
+      left: 7px;
     }
   }
   

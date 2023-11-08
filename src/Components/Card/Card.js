@@ -1,8 +1,8 @@
 import { useLocation } from "react-router-dom";
 import "./Card.css";
-import {  useState } from "react";
+import { useState } from "react";
 
-function Card({ card/* , isLiked, onCardLike  */}) {
+function Card({ card /* , isLiked, onCardLike  */ }) {
   const location = useLocation();
 
   function handleCalcTime(time) {
@@ -18,19 +18,16 @@ function Card({ card/* , isLiked, onCardLike  */}) {
   const [isLiked, setLike] = useState(false);
 
   function handleCardLike() {
-    setLike(!isLiked)
-		console.log("like");
+    setLike(!isLiked);
+    console.log("like");
   }
 
   return (
     <li className="card">
-      <img
-        className="card__img"
-        src={card.image.url}
-        alt={card.name}
-      />
+      <img className="card__img" src={card.image.url} alt={card.name} />
       <div className="card__caption">
         <p className="card__name">{card.name}</p>
+        {location.pathname === "/movies" ? (
           <button
             className="card__btn"
             type="button"
@@ -41,13 +38,22 @@ function Card({ card/* , isLiked, onCardLike  */}) {
               className={`card__like-btn-img ${
                 isLiked ? "card__like-btn-img_active" : ""
               }`}
-            >
-            </div>
+            ></div>
           </button>
+        ) : (
+          <button
+            className="card__btn card__btn_delete"
+            type="button"
+            aria-label="Лайк"
+            onClick={handleCardLike}
+          >
+            <div
+              className={`card__delete-btn-img `}
+            ></div>
+          </button>
+        )}
       </div>
-      <p className="card__time">
-        {handleCalcTime(card.time)}
-      </p>
+      <p className="card__time">{handleCalcTime(card.time)}</p>
     </li>
   );
 }
