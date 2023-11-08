@@ -1,19 +1,25 @@
 import { useLocation } from "react-router-dom";
 import "./Card.css";
+import {  useState } from "react";
 
-
-
-function Card({ card, isLiked, onCardLike }) {
+function Card({ card/* , isLiked, onCardLike  */}) {
   const location = useLocation();
 
-  function handleConvertDuration(duration) {
-    const minutes = duration % 60;
-    const hours = (duration - minutes) / 60;
+  function handleCalcTime(time) {
+    const minutes = time % 60;
+    const hours = (time - minutes) / 60;
     if (hours < 1) {
       return `${minutes}м`;
     } else {
       return `${hours}ч ${minutes}м`;
     }
+  }
+
+  const [isLiked, setLike] = useState(false);
+
+  function handleCardLike() {
+    setLike(!isLiked)
+		console.log("like");
   }
 
   return (
@@ -29,7 +35,7 @@ function Card({ card, isLiked, onCardLike }) {
             className="card__btn"
             type="button"
             aria-label="Лайк"
-            onClick={onCardLike}
+            onClick={handleCardLike}
           >
             <div
               className={`card__like-btn-img ${
@@ -40,7 +46,7 @@ function Card({ card, isLiked, onCardLike }) {
           </button>
       </div>
       <p className="card__time">
-        {handleConvertDuration(card.duration)}
+        {handleCalcTime(card.time)}
       </p>
     </li>
   );

@@ -11,6 +11,9 @@ import User from "../User/User";
 import Signup from "../Signup/Signup";
 import Signin from "../Signin/Signin";
 import Movies from "../Movies/Movies";
+import { useContext } from 'react';
+
+
 
 import initialCards from "../../utils/initialCard"
 
@@ -23,7 +26,7 @@ function App() {
 	const [isFilterOn, setFilter] = useState(false); //Статус свича фильтра
 	const [cards, setCards] = useState([]); //установка карточек для рендера
 	const [savedCards, setSavedCards] = useState([]);
-	const [isLiked, setLike] = useState(false);
+/* 	const [isLiked, setLike] = useState(false); */
 
 	/* Обработчики */
 	/* Открытие меню */
@@ -51,10 +54,11 @@ function App() {
 	  }, []);
 
 	  /* Лайк */
-	  function handleCardLike() {
+/* 	  function handleCardLike() {
 		console.log("like")
 		setLike(!isLiked);
-	  }
+	  } */
+
 
 	return (
 		/*  <Provider storage = {storage}> */
@@ -78,8 +82,8 @@ function App() {
 								cards={cards}
 								onFilterChange={handleFilterChange}
 								isFilterOn={isFilterOn}
-								isLiked={isLiked}
-								onCardLike={handleCardLike}
+								/* isLiked={isLiked}
+								onCardLike={handleCardLike} */
 							/>
 						}
 					/>
