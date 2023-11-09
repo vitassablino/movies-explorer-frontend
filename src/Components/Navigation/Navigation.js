@@ -1,8 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
 import "./Navigation.css";
+import { useCallback, useEffect, useRef, useState } from "react";
+
+
 
 function Navigation({ isMenuOpen, onClose }) {
   const location = useLocation();
+
 
   return (
     <nav className={`navigation ${isMenuOpen ? "" : "navigation_hidden"}`}>

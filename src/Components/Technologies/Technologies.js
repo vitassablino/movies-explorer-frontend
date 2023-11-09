@@ -1,10 +1,10 @@
 import "./Technologies.css";
-import GreeteingTitle from "../GreetingTitle/GreeteingTitle";
+
 
 function Technologies() {
   return (
     <section className="technologies">
-      <GreeteingTitle title="Технологии" />
+      <h2 className="technologies__techs">Технологии</h2>
       <h3 className="technologies__title">7 технологий</h3>
       <p className="technologies__text">
         На&nbsp;курсе веб-разработки мы&nbsp;освоили технологии, которые

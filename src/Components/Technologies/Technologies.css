@@ -6,13 +6,25 @@
     background-color:#272727;
   }
   
+.technologies__techs {
+  font-family:"Inter", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 26.63px;
+  letter-spacing: -0.04em;
+  color: white;
+  margin: 0;
+  padding: 0 0 23px 0;
+  border-bottom: 1px solid white
+}
+
   .technologies__title {
     margin-top: 90px;
     margin-bottom: 0;
     font-family:"Inter", "Arial", sans-serif;
     font-weight: 400;
     font-size: 50px;
-    line-height: 1.16;
+    line-height: 58px;
     letter-spacing: -0.04em;
     text-align: center;
     color: white;
@@ -24,7 +36,7 @@
     font-family:"Inter", "Arial", sans-serif;
     font-weight: 400;
     font-size: 14px;
-    line-height: 1.43;
+    line-height: 20px;
     letter-spacing: -0.04em;
     text-align: center;
     color: white;
@@ -56,9 +68,9 @@
     font-family: "Inter", "Arial", sans-serif;
     font-weight: 400;
     font-size: 14px;
-    line-height: 1.21;
+    line-height: 16.94px;
     letter-spacing: -0.04em;
-    color: var(--white);
+    color: white; 
   }
   
   @media screen and (max-width: 1000px) {
@@ -73,7 +85,7 @@
     .technologies__text {
       margin-top: 22px;
       font-size: 12px;
-      line-height: 1.5;
+      line-height: 18px;
     }
   
     .technologies__list {
@@ -87,7 +99,7 @@
   
     .technologies__list-item-text {
       font-size: 12px;
-      line-height: 1.25;
+      line-height: 15px;
     }
   }
   
@@ -99,7 +111,7 @@
     .technologies__title {
       margin-top: 60px;
       font-size: 30px;
-      line-height: 1.2;
+      line-height: 36px;
     }
   
     .technologies__text {

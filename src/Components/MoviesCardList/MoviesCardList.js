@@ -1,7 +1,9 @@
 import "./MoviesCardList.css";
 import Card from "../Card/Card";
+import { useLocation } from "react-router-dom";
 
 function MoviesCardList({ cards, isLiked, onCardLike }) {
+  const location = useLocation();
   return (
     <section
       className="movies-card-list"
@@ -20,7 +22,7 @@ function MoviesCardList({ cards, isLiked, onCardLike }) {
             ))}
           </ul>
           <button
-            className="movies-card-list__btn"
+            className={`movies-card-list__btn ${location.pathname === '/saved-movies' ? 'movies-card-list__btn_hidden' : ''}`} 
             type="button"
           >
             Ещё
