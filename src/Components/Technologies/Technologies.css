@@ -122,5 +122,6 @@
   
     .technologies__list {
       margin-top: 50px;
+        grid-template-columns: repeat(2, 84px);
     }
   }
