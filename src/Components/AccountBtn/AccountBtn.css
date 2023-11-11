@@ -1,0 +1,48 @@
+.account-btn {
+    border-radius: 50px;
+    padding-left: 11px;
+
+    font-family: "Inter", "Arial", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 28px;
+    color: white;
+    text-decoration: none;
+    transition: opacity .3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(170, 170, 170, 0.05);
+   /* justify-self: start; */
+  }
+
+  .account-btn_side-menu {
+    margin-top: auto;
+  }
+
+  .account-btn:hover {
+    transition: .3s ease;
+    background-color: rgba(170, 141, 141, 0.5);
+  }
+
+  .account-icon {
+    background: url("../../images/icon-main.svg") center no-repeat;
+    background-color: #0F4157;
+    /* background-color: red; */
+    border-radius: 50%;
+    height: 26px;
+    width: 26px;
+    margin-right: 3px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 5px;
+    
+  }
+
+
+    
+  @media screen and (max-width: 768px) {
+    .account-btn_hidden {
+      display: none;
+    }
+  }
