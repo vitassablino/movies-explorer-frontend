@@ -37,7 +37,7 @@
   font-family: "Inter", "Arial", sans-serif;
   font-size: 12px;
   font-weight: 500;
-  line-height: 1.33;
+  line-height: 18px;
   text-decoration: none;
   color: white;
   transition: opacity .3s ease-in-out;
@@ -102,7 +102,7 @@
 
   .header__link {
     font-size: 10px;
-    line-height: 1.6;
+    line-height: 16px;
   }
 
   .header__link_type_login {

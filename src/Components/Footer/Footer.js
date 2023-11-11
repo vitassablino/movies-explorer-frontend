@@ -5,7 +5,7 @@ function Footer() {
   const location = useLocation();
   return (
     <footer className={`footer ${
-      location.pathname !== "/user" ? "" : "footer_disabled"
+      location.pathname !== "/user"  && location.pathname !== "/404" ? "" : "footer_disabled" 
     }`}>
       <div className="footer__wrapper">
         <p className="footer__text">

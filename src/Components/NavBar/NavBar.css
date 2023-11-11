@@ -16,13 +16,7 @@
 }
 
 .navbar__list-element {
-	font-family: "Inter", "Arial", sans-serif;
-	font-size: 13px;
-	font-weight: 500;
-	line-height: 16px;
-	color: white;
 	display: inline;
-	text-decoration: underline;
 	padding-right: 40px;
 }
 
@@ -34,6 +28,15 @@
 	transition: 0.3s ease-in-out;
 	opacity: 0.5;
 	cursor: pointer;
+}
+
+.navbar__link {
+	color: white;
+	font-family: "Inter", "Arial", sans-serif;
+	font-size: 13px;
+	font-weight: 500;
+	line-height: 16px;
+	text-decoration: underline;
 }
 
 @media screen and (max-width: 500px) {

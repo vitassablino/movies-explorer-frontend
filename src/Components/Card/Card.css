@@ -121,13 +121,14 @@
   
     .card__name {
       font-size: 12px;
-      line-height: 1.25;
+      line-height: 15.73px;
     }
   
     .card__time {
       margin-top: 14px;
       font-size: 10px;
-      line-height: 1.2;
+      line-height: 13.31px;
+      color: #8B8B8B;
     }
 
     .card__btn_delete {

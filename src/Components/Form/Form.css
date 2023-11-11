@@ -95,7 +95,7 @@
     font-family: "Inter", "Arial", sans-serif;
     font-size: 10px;
     font-weight: 500;
-    line-height: 1.2;
+    line-height: 12.1px;
     color: red;
   }
   
@@ -110,7 +110,7 @@
     font-family: "Inter", "Arial", sans-serif;
     font-size: 10px;
     font-weight: 400;
-    line-height: 1.2;
+    line-height: 12.1px;
     color: red;
     padding-left: 10px;
     margin-top: 10px;
@@ -140,7 +140,7 @@
     font-family: "Inter", "Arial", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    line-height: 1.21;
+    line-height: 16.94px;
     color: white;
   }
   

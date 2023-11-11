@@ -9,7 +9,7 @@ function Header({ onBurgerClick, loggedIn, isMenuOpen }) {
 	return (
 		<header
 			className={`header ${
-				location.pathname !== "/signup" && location.pathname !== "/signin"
+				location.pathname !== "/signup" && location.pathname !== "/signin"  && location.pathname !== "/404"
 					? ""
 					: "header_disabled"
 			}`}

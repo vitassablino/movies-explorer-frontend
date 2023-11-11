@@ -13,9 +13,12 @@ import Signin from "../Signin/Signin";
 import Movies from "../Movies/Movies";
 import { useContext } from "react";
 import SavedMovies from "../SavedMovies/SavedMovies";
+import NotFound from "../NotFound/NotFound";
+import { Navigate } from "react-router-dom";
 
 import initialCards from "../../utils/initialCard";
 import savedInitialCards from "../../utils/savedInitialCards";
+
 
 
 function App() {
@@ -97,6 +100,8 @@ function App() {
               />
             }
           />
+          <Route path="*" element={<Navigate to="/404" replace />} />
+        <Route path="/404" element={<NotFound />} />
         </Routes>
         {loggedIn && <Footer />}
         <SideMenu isSideMenuOpen={isMenuOpen} onClose={handleCloseMenu} />
