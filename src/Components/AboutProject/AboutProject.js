@@ -31,10 +31,10 @@ function AboutProject({ aboutRef }) {
           <p className="about-project__stage-caption">Back-end</p>
         </div>
         <div className="about-project__stage">
-          <p className="about-project__week about-project__week_grey">
+          <p className="about-project__week about-project__week-grey">
             4 недели
           </p>
-          <p className="about-project__stage-caption">Front-end</p>
+          <p className="about-project__stage-caption">Front-end</p> 
         </div>
       </div>
     </section>

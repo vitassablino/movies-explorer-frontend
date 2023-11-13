@@ -2,7 +2,7 @@
   max-width: 100%;
 }
 
-.header_disabled {
+.header_active_disabled {
   display: none;
 }
 
@@ -18,7 +18,7 @@
   
 }
 
-.header__wrapper_main-color {
+.header__wrapper_color_main-color {
   background-color: #073042;
 }
 
@@ -63,13 +63,13 @@
   background-size: 44px;
 }
 
-.header_navigation {
+.header__navigation {
   display: flex;
     align-items: center;
     max-height: 38px;
 }
 
-.header_navigation_hidden {
+.header__navigation_hidden {
   visibility: hidden;
 }
 

@@ -1,6 +1,7 @@
 import "./SearchForm.css";
 import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useState } from "react";
+
 
 function SearchForm({ onFilterChange, isFilterOn }) {
   function handleSubmit(e) {
@@ -30,7 +31,6 @@ function SearchForm({ onFilterChange, isFilterOn }) {
         id="search"
         action="#"
         name="search"
-        noValidate
         onSubmit={handleSubmit}
       >
         <input
@@ -39,6 +39,7 @@ function SearchForm({ onFilterChange, isFilterOn }) {
           name="search"
           placeholder="Фильм"
           type="search"
+          required
         />
         <FilterCheckbox
           onFilterChange={onFilterChange}

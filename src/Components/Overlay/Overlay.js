@@ -10,7 +10,7 @@ function Overlay({ isActive, onClose, ...props }) {
 
   return (
     <div
-      className={`overlay ${isActive ? "overlay_active" : ""}`}
+      className={`overlay ${isActive ? "overlay_active_active" : ""}`}
       onMouseDown={closeByClickOnOverlay}
     >
       {props.children}

@@ -14,7 +14,7 @@
     z-index: 3;
   }
   
-  .overlay_active {
+  .overlay_active_active {
     visibility: visible;
     opacity: 1;
   }

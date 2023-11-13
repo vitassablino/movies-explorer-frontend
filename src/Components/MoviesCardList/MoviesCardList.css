@@ -35,7 +35,7 @@
     color: white;
   }
 
-  .movies-card-list__btn_hidden {
+  .movies-card-list__btn_active_hidden {
     display: none;
   }
   

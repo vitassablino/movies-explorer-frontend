@@ -31,6 +31,10 @@
     color: white;
     outline:none;
   }
+
+  .search-form__search:focus {
+    outline: 1px solid grey;
+  }
   
   .search-form__submit-btn {
     position: relative;
@@ -71,6 +75,14 @@
 
   .search-form__submit-btn_animation {
     animation: animate-click 0.5s linear forwards;
+  }
+
+  .search-form__error {
+    display: none;
+  }
+
+  .search-form__error_active {
+    display: block;
   }
 
   @keyframes animate-click {

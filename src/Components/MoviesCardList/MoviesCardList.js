@@ -22,7 +22,7 @@ function MoviesCardList({ cards, isLiked, onCardLike }) {
             ))}
           </ul>
           <button
-            className={`movies-card-list__btn ${location.pathname === '/saved-movies' ? 'movies-card-list__btn_hidden' : ''}`} 
+            className={`movies-card-list__btn ${location.pathname === '/saved-movies' ? 'movies-card-list__btn_active_hidden' : ''}`} 
             type="button"
           >
             Ещё

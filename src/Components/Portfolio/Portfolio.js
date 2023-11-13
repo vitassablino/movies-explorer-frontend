@@ -8,7 +8,7 @@ function Portfolio() {
         <li className="portfolio__list-item">
           <a
             className="portfolio__link "
-            href="https://"
+            href="https://vitassablino.github.io/russian-travel/"
             target="_blank"
             rel="noreferrer"
           >
@@ -19,7 +19,7 @@ function Portfolio() {
         <li className="portfolio__list-item">
           <a
             className="portfolio__link"
-            href="https://"
+            href="https://vitassablino.github.io/mesto/"
             target="_blank"
             rel="noreferrer"
           >
@@ -30,7 +30,7 @@ function Portfolio() {
         <li className="portfolio__list-item">
           <a
             className="portfolio__link"
-            href="https://"
+            href="https://github.com/vitassablino/react-mesto-api-full-gha" //на месте приложения сейчас развёрнут частный проект. Поэтому ссылка пока на гитхаб.
             target="_blank"
             rel="noreferrer"
           >

@@ -23,7 +23,7 @@ function Form({
       action="#"
       name={`${name}`}
       id={`${name}`}
-      className={`form form_${name}`}
+      className={`form form_place_${name}`}
       noValidate
       onSubmit={onSubmit}
     >

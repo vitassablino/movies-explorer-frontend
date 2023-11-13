@@ -12,11 +12,10 @@
     display: flex;
     justify-content: center;
     text-align: center;
-    background-color: rgba(170, 170, 170, 0.05);
    /* justify-self: start; */
   }
 
-  .account-btn_side-menu {
+  .account-btn_side-menu_opened {
     margin-top: auto;
   }
 
@@ -38,11 +37,9 @@
     margin-left: 5px;
     
   }
-
-
     
   @media screen and (max-width: 768px) {
-    .account-btn_hidden {
+    .account-btn_visible_hidden {
       display: none;
     }
   }

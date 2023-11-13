@@ -36,13 +36,13 @@ function Card({ card /* , isLiked, onCardLike  */ }) {
           >
             <div
               className={`card__like-btn-img ${
-                isLiked ? "card__like-btn-img_active" : ""
+                isLiked ? "card__like-btn-img_active_active" : ""
               }`}
             ></div>
           </button>
         ) : (
           <button
-            className="card__btn card__btn_delete"
+            className="card__btn card__btn_action_delete"
             type="button"
             aria-label="Лайк"
             onClick={handleCardLike}

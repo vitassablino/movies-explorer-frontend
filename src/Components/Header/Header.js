@@ -11,19 +11,19 @@ function Header({ onBurgerClick, loggedIn, isMenuOpen }) {
 			className={`header ${
 				location.pathname !== "/signup" && location.pathname !== "/signin"  && location.pathname !== "/404"
 					? ""
-					: "header_disabled"
+					: "header_active_disabled"
 			}`}
 		>
 			{loggedIn ? (
 				<div
 					className={`header__wrapper ${
-						location.pathname === "/" ? "header__wrapper_main-color" : ""
+						location.pathname === "/" ? "header__wrapper_color_main-color" : ""
 					}`}
 				>
-					<div className="header_navigation ">
+					<div className="header__navigation ">
 						<Logo />
 						<div
-							className={`"" ${isMenuOpen ? "header_navigation_hidden" : ""}`}
+							className={`"" ${isMenuOpen ? "header__navigation_hidden" : ""}`}
 						>
 							<Navigation isMenuOpen={isMenuOpen} />
 						</div>
@@ -39,7 +39,7 @@ function Header({ onBurgerClick, loggedIn, isMenuOpen }) {
 			) : (
 				<div
 					className={`header__wrapper ${
-						location.pathname === "/" ? "header__wrapper_main-color" : ""
+						location.pathname === "/" ? "header__wrapper_color_main-color" : ""
 					}`}
 				>
 					<Logo />

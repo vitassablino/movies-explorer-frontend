@@ -10,7 +10,7 @@ function SideMenu({ isSideMenuOpen, onClose }) {
     <Overlay isActive={isSideMenuOpen} onClose={onClose}>
       <div
         className={`side-menu ${
-          isSideMenuOpen ? "side-menu_active" : ""
+          isSideMenuOpen ? "side-menu_active_active" : ""
         }`}
       >
         <button
