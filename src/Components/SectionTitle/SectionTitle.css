@@ -10,7 +10,7 @@
     margin: 0;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 660px) {
 .section-title{
     padding-bottom: 27px;
     font-size: 18px;

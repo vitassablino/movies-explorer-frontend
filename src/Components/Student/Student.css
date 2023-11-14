@@ -77,36 +77,6 @@
     grid-area: photo;
   }
   
- /*  @media screen and (max-width: 1000px) {
-    .student {
-      padding: 90px 50px 66px;
-    }
-  
-    .student__about {
-      grid-template-columns: minmax(292px, 600px) 255px;
-    }
-  
-    .student__name {
-      font-size: 40px;
-      line-height: 40px;
-    }
-  
-    .student__profession {
-      margin-top: 16px;
-      font-size: 12px;
-      line-height: 18px;
-    }
-  
-    .student__text {
-      margin-top: 20px;
-      font-size: 12px;
-      line-height: 18px;
-    }
-  
-    .student__photo {
-      width: 255px;
-    }
-  } */
   
   @media screen and (max-width: 760px) {
 
@@ -131,12 +101,12 @@
     }
   
     .student__photo {
-      width: 292px;
+      /* width: 292px; */
       justify-self: center;
     }
   }
   
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 660px) {
     .student {
       padding: 70px 14px 51px;
     }

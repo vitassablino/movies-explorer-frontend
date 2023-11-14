@@ -176,7 +176,7 @@
   }
  
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1000px) {
     .form_place_user-edit {
       margin-top: 86px;
     }
@@ -197,7 +197,7 @@
   }
   }
   
-  @media screen and (max-width: 320px) {
+  @media screen and (max-width: 660px) {
     .form_signup {
       margin-top: 80px;
     }

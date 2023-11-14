@@ -36,7 +36,7 @@
   }
   
   
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1000px) {
     .promo {
       padding: 326px 0px 342px;
       background-position-y: 224px;
@@ -47,7 +47,7 @@
     }
   }
   
-  @media screen and (max-width: 320px) {
+  @media screen and (max-width: 660px) {
     .promo {
       padding: 207px 0px 246px;
       background-size: 248px 248px;
@@ -56,8 +56,8 @@
   
     .promo__wrapper {
       max-height: 117px;
-      padding-left: 10px;
-      padding-right: 10px;
+      /* padding-left: 10px;
+      padding-right: 10px; */
     }
   
     .promo__title {

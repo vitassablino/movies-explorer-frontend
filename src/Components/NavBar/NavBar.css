@@ -10,7 +10,8 @@
 .navbar__list {
 	margin: auto;
 	list-style-type: none;
-	padding: 0 40px;
+	padding: 0;
+	
 	display: inline-block;
 	vertical-align: middle;
 }

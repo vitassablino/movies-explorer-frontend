@@ -29,14 +29,14 @@
     
   }
   
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1000px) {
     .form-auth {
       padding-top: 232px;
       padding-bottom: 232px;
     }
   }
   
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 660px) {
     .form-auth {
       padding-top: 56px;
       padding-bottom: 30px;

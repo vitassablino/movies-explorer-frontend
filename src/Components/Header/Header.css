@@ -79,7 +79,7 @@
   transform: scale(1.2);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
   .header__btn-burger {
     display: block;
   }
@@ -90,7 +90,7 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 660px) {
   .header__wrapper {
     padding-right: 14px;
     padding-left: 14px;

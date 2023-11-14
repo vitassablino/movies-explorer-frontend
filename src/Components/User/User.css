@@ -50,7 +50,7 @@
     color: #EE3465;
   }
   
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1000px) {
     .user__wrapper {
       padding-top: 196px;
       padding-bottom: 269px;
@@ -62,7 +62,7 @@
 
   }
   
-  @media screen and (max-width: 320px) {
+  @media screen and (max-width: 660px) {
     .user__wrapper {
       padding-top: 20px;
       padding-bottom: 40px;

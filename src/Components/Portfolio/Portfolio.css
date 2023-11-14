@@ -57,7 +57,7 @@
     line-height: 60px;
   }
   
-  @media screen and (max-width: 990px) {
+  @media screen and (max-width: 1000px) {
     .portfolio {
       margin-top: 90px;
     }
@@ -68,7 +68,7 @@
   
   }
   
-  @media screen and (max-width: 620px) {
+  @media screen and (max-width: 660px) {
     .portfolio {
       margin-top: 70px;
     }

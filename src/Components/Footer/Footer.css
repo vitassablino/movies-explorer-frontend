@@ -70,13 +70,13 @@
   opacity: 0.6
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
   .footer__wrapper {
     padding: 80px 30px 20px;
   }
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 660px) {
   .footer__wrapper {
     padding: 80px 10px 20px;
     grid-template-columns: 1fr;

@@ -59,13 +59,13 @@
     opacity: 0.5;
   }
   
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1000px) {
     .navigation_hidden {
       display: none;
     }
   }
   
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 660px) {
     .navigation__menu-wrapper_side-menu {
       gap: 24px;
     }
