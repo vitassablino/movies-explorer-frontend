@@ -38,7 +38,7 @@
     
   }
     
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1000px) {
     .account-btn_visible_hidden {
       display: none;
     }
