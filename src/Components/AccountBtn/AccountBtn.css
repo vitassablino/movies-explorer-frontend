@@ -24,7 +24,7 @@
     background-color: rgba(170, 141, 141, 0.5);
   }
 
-  .account-icon {
+  .account-btn__icon {
     background: url("../../images/icon-main.svg") center no-repeat;
     background-color: #0F4157;
     /* background-color: red; */
@@ -35,6 +35,10 @@
     margin-top: 3px;
     margin-bottom: 3px;
     margin-left: 5px;
+  }
+
+  .account-btn__icon_black {
+    background-color: #313131;
   }
     
   @media screen and (max-width: 1000px) {

@@ -12,7 +12,7 @@ function AccountBtn({ isMenuOpen, onClose }) {
 			}`}
 		>
 			Аккаунт
-			<div className="account-icon"/>
+			<div className={`account-btn__icon ${location.pathname === "/movies" || location.pathname === "/saved-movies" ? "account-btn__icon_black" : ""}`}/>
 		</Link>
 	);
 }
