@@ -1,0 +1,7 @@
+{
+    "bemHelper.modifierSeparator": "_",
+    "bemHelper.ignoreClassNames": [
+        
+        "material-icons"
+    ]
+}
