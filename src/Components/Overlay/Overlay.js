@@ -1,4 +1,4 @@
-import "./Overlay.css";
+import './Overlay.css';
 
 function Overlay({ isActive, onClose, ...props }) {
 
@@ -10,7 +10,7 @@ function Overlay({ isActive, onClose, ...props }) {
 
   return (
     <div
-      className={`overlay ${isActive ? "overlay_active_active" : ""}`}
+      className={`overlay ${isActive ? 'overlay_active_active' : ''}`}
       onMouseDown={closeByClickOnOverlay}
     >
       {props.children}

@@ -1,10 +1,10 @@
-import "./AboutProject.css";
-import SectionTitle from "../SectionTitle/SectionTitle";
+import './AboutProject.css';
+import SectionTitle from '../SectionTitle/SectionTitle';
 
-function AboutProject({ aboutRef }) {
+function AboutProject() {
   return (
-    <section id="about-project" className="about-project" ref={aboutRef}>
-      <SectionTitle title={"О проекте"} />
+    <section id="about-project" className="about-project">
+      <SectionTitle title={'О проекте'} />
       <div className="about-project__two-columns">
         <div className="about-project__column">
           <h3 className="about-project__subtitle">
@@ -34,7 +34,7 @@ function AboutProject({ aboutRef }) {
           <p className="about-project__week about-project__week-grey">
             4 недели
           </p>
-          <p className="about-project__stage-caption">Front-end</p> 
+          <p className="about-project__stage-caption">Front-end</p>
         </div>
       </div>
     </section>

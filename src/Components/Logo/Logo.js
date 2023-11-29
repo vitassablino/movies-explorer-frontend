@@ -1,12 +1,12 @@
-import { Link } from "react-router-dom";
-import "./Logo.css";
+import { Link } from 'react-router-dom';
+import './Logo.css';
 
 function Logo({ place }) {
   return (
     <Link
       to="/"
       className={`logo ${
-        place === "auth" ? "logo_place_auth" : ""
+        place === 'auth' ? 'logo_place_auth' : ''
       }`}
       aria-label="Главная страница"
     >

@@ -1,6 +1,6 @@
-import "./SearchForm.css";
-import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
-import { useState } from "react";
+import './SearchForm.css';
+import FilterCheckbox from '../FilterCheckbox/FilterCheckbox';
+import { useState } from 'react';
 
 
 function SearchForm({ onFilterChange, isFilterOn }) {
@@ -8,16 +8,15 @@ function SearchForm({ onFilterChange, isFilterOn }) {
     e.preventDefault();
   }
 
-  const [animationStatus, setAnimationStatus] = useState(false);
+  const [ animationStatus, setAnimationStatus ] = useState(false);
 
   function toResetAnimation() {
     setAnimationStatus(false);
   }
 
-  function toAnimate () {
+  function toAnimate() {
     setAnimationStatus(true);
     setTimeout(toResetAnimation, 2000);
-    console.log('анимация завершена')
   }
 
 
@@ -46,7 +45,7 @@ function SearchForm({ onFilterChange, isFilterOn }) {
           isFilterOn={isFilterOn}
         />
         <button
-          className={`search-form__submit-btn ${animationStatus === true ? 'search-form__submit-btn_animation' : ""}`}
+          className={`search-form__submit-btn ${animationStatus === true ? 'search-form__submit-btn_animation' : ''}`}
           type="submit"
           form="search"
           onClick={toAnimate}

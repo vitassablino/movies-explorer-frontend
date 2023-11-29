@@ -1,14 +1,12 @@
-import "./FilterCheckbox.css";
-import { useCallback, useEffect, useRef, useState } from "react";
+import './FilterCheckbox.css';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 function FilterCheckbox({ onFilterChange, isFilterOn }) {
-
-  
 
 
   return (
     <label className="filter-checkbox">
-      
+
       <input
         className="filter-checkbox__switch"
         form="search"

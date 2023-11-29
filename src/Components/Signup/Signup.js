@@ -1,7 +1,6 @@
-import useFormValidation from "../../utils/useFormValidation";
-import "./Signup.css";
-import FormAuth from "../FotmAuth/FormAuth";
-import { REG_EXP } from "../../utils/constants";
+import useFormValidation from '../../hooks/useFormValidation';
+import './Signup.css';
+import FormAuth from '../FormAuth/FormAuth';
 
 function Signup() {
   const { values, errors, isFormValid, onChange } = useFormValidation();
@@ -10,10 +9,10 @@ function Signup() {
     e.preventDefault();
   }
 
-  return  (
+  return (
     <main className="signup">
       <FormAuth
-        title="Добро&nbsp;пожаловать!"
+        title="Добро пожаловать!"
         name="signup"
         onSubmit={handleSubmit}
         isFormValid={isFormValid}
@@ -23,7 +22,7 @@ function Signup() {
           Имя
           <input
             className={`form__input ${
-              errors.name ? "form__input_style_error" : ""
+              errors.name ? 'form__input_style_error' : ''
             }`}
             type="text"
             name="name"
@@ -33,22 +32,21 @@ function Signup() {
             maxLength="30"
             id="name-input"
             onChange={onChange}
-            value={values.name || ""}
-            pattern={REG_EXP}
+            value={values.name ?? ''}
           />
           <span
             className={`form__input-error ${
-              errors.name ? "form__input-error_active" : ""
+              errors.name ? 'form__input-error_active' : ''
             }`}
           >
-            {errors.name || ""}
+            {errors.name ?? ''}
           </span>
         </label>
         <label className="form__input-wrapper">
           E-mail
           <input
             className={`form__input ${
-              errors.email ? "form__input_style_error" : ""
+              errors.email ? 'form__input_style_error' : ''
             }`}
             type="text"
             name="email"
@@ -56,21 +54,21 @@ function Signup() {
             required
             id="email-input"
             onChange={onChange}
-            value={values.email || ""}
+            value={values.email ?? ''}
           />
           <span
             className={`form__input-error ${
-              errors.email ? "form__input-error_active" : ""
+              errors.email ? 'form__input-error_active' : ''
             }`}
           >
-            {errors.email || ""}
+            {errors.email ?? ''}
           </span>
         </label>
         <label className="form__input-wrapper">
           Пароль
           <input
             className={`form__input ${
-              errors.password ? "form__input_style_error" : ""
+              errors.password ? 'form__input_style_error' : ''
             }`}
             type="password"
             name="password"
@@ -80,14 +78,14 @@ function Signup() {
             maxLength="30"
             id="password-input"
             onChange={onChange}
-            value={values.password || ""}
+            value={values.password ?? ''}
           />
           <span
             className={`form__input-error ${
-              errors.password ? "form__input-error_active" : ""
+              errors.password ? 'form__input-error_active' : ''
             }`}
           >
-            {errors.password || ""}
+            {errors.password ?? ''}
           </span>
         </label>
       </FormAuth>

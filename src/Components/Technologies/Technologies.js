@@ -1,11 +1,11 @@
-import SectionTitle from "../SectionTitle/SectionTitle";
-import "./Technologies.css";
+import SectionTitle from '../SectionTitle/SectionTitle';
+import './Technologies.css';
 
 
 function Technologies() {
   return (
     <section id="technologies" className="technologies">
-      <SectionTitle title={"Технологии"}/>
+      <SectionTitle title={'Технологии'} />
       <h3 className="technologies__title">7 технологий</h3>
       <p className="technologies__text">
         На&nbsp;курсе веб-разработки мы&nbsp;освоили технологии, которые

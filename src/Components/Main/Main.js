@@ -1,22 +1,28 @@
-import "./Main.css";
+import './Main.css';
 
-import Promo from "../Promo/Promo";
-import NavBar from "../NavBar/NavBar";
-import AboutProject from "../AboutProject/AboutProject";
-import Technologies from "../Technologies/Technologies";
-import Student from "../Student/Student";
-import Portfolio from "../Portfolio/Portfolio";
+import Promo from '../Promo/Promo';
+import NavBar from '../NavBar/NavBar';
+import AboutProject from '../AboutProject/AboutProject';
+import Technologies from '../Technologies/Technologies';
+import Student from '../Student/Student';
+import Portfolio from '../Portfolio/Portfolio';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
-function Main({ aboutRef }) {
+function Main() {
   return (
-    <main className="main">
-      <Promo  />
-      <NavBar />
-      <AboutProject aboutRef={aboutRef} />
-      <Technologies />
-      <Student />
-      <Portfolio />
-    </main>
+    <>
+      <Header />
+      <main className="main">
+        <Promo />
+        <NavBar />
+        <AboutProject />
+        <Technologies />
+        <Student />
+        <Portfolio />
+      </main>
+      <Footer />
+    </>
   );
 }
 

@@ -1,16 +1,15 @@
+import './SideMenu.css';
 
-import "./SideMenu.css";
-
-import Overlay from "../Overlay/Overlay";
-import AccountBtn from "../AccountBtn/AccountBtn";
-import Navigation from "../Navigation/Navigation";
+import Overlay from '../Overlay/Overlay';
+import AccountBtn from '../AccountBtn/AccountBtn';
+import Navigation from '../Navigation/Navigation';
 
 function SideMenu({ isSideMenuOpen, onClose }) {
   return (
     <Overlay isActive={isSideMenuOpen} onClose={onClose}>
       <div
         className={`side-menu ${
-          isSideMenuOpen ? "side-menu_active_active" : ""
+          isSideMenuOpen ? 'side-menu_active_active' : ''
         }`}
       >
         <button

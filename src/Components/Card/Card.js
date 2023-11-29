@@ -1,6 +1,6 @@
-import { useLocation } from "react-router-dom";
-import "./Card.css";
-import { useState } from "react";
+import { useLocation } from 'react-router-dom';
+import './Card.css';
+import { useState } from 'react';
 
 function Card({ card /* , isLiked, onCardLike  */ }) {
   const location = useLocation();
@@ -15,11 +15,11 @@ function Card({ card /* , isLiked, onCardLike  */ }) {
     }
   }
 
-  const [isLiked, setLike] = useState(false);
+  const [ isLiked, setLike ] = useState(false);
 
   function handleCardLike() {
     setLike(!isLiked);
-    console.log("like");
+    console.log('like');
   }
 
   return (
@@ -27,7 +27,7 @@ function Card({ card /* , isLiked, onCardLike  */ }) {
       <img className="card__img" src={card.image.url} alt={card.name} />
       <div className="card__caption">
         <p className="card__name">{card.name}</p>
-        {location.pathname === "/movies" ? (
+        {location.pathname === '/movies' ? (
           <button
             className="card__btn"
             type="button"
@@ -36,7 +36,7 @@ function Card({ card /* , isLiked, onCardLike  */ }) {
           >
             <div
               className={`card__like-btn-img ${
-                isLiked ? "card__like-btn-img_active_active" : ""
+                isLiked ? 'card__like-btn-img_active_active' : ''
               }`}
             ></div>
           </button>

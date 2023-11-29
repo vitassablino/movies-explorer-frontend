@@ -1,20 +1,24 @@
-import "./Form.css";
+import './Form.css';
+import { memo } from 'react';
 
-function Form({
-  name,
-  onSubmit,
-  isFormValid,
-  isCurrentUser,
-  buttonText,
-  isTyping,
-  ...props
-}) {
-    /* Обработчик отключения кнопки */
+function Form(props) {
+  const {
+    name,
+    onSubmit,
+    isValid,
+    isCurrentUser,
+    buttonText,
+    isTyping,
+    children,
+    ...otherProps
+  } = props;
+
+  /* Обработчик отключения кнопки */
   function handleDisableButton() {
-    if (name === "user-edit") {
-      return isFormValid && !isCurrentUser ? false : true;
+    if (name === 'user-edit') {
+      return !(isValid && !isCurrentUser);
     } else {
-      return isFormValid ? false : true;
+      return !isValid;
     }
   }
 
@@ -27,14 +31,14 @@ function Form({
       noValidate
       onSubmit={onSubmit}
     >
-      {props.children}
+      {children}
       <button
         type="submit"
         form={`${name}`}
         className={`form__submit-btn form__submit-btn_${name} ${
-          name === "user-edit" && !isTyping
-            ? "form__submit-btn_hidden"
-            : ""
+          name === 'user-edit' && !isTyping
+            ? 'form__submit-btn_hidden'
+            : ''
         }`}
         disabled={handleDisableButton()}
       >
@@ -44,4 +48,4 @@ function Form({
   );
 }
 
-export default Form;
+export default memo(Form);
