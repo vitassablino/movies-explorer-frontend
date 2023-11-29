@@ -1,0 +1,141 @@
+.card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #222222;
+}
+
+.card__img {
+  height: 203px;
+  object-fit: cover;
+  font-family: "Inter", "Arial", sans-serif;
+  color: white;
+}
+
+.card__caption {
+  height: 16px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;;
+}
+
+.card__name {
+  max-width: 290px;
+  margin: 0;
+  font-family: "Inter", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 15.73px;
+  color: white;
+  padding-left: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card__btn {
+  padding: 0;
+  border: none;
+  background-color: #222222;
+  cursor: pointer;
+}
+
+.card__btn_action_delete {
+  opacity: 0;
+  width: 30px;
+  height: 30px;
+}
+
+.card:hover .card__btn_action_delete {
+  opacity: 1;
+}
+
+.card__like-btn-img {
+  width: 14px;
+  height: 12px;
+  fill: none;
+  background-image: url("../../images/like.svg");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-right: 42px;
+  transition: 0.3s ease-out;
+}
+
+.card__like-btn-img:hover {
+  scale: 1.2;
+}
+
+.card__like-btn-img_active_active {
+  background-image: url("../../images/like_active.svg");
+}
+
+.card__delete-btn-img {
+  width: 7px;
+  height: 7px;
+  fill: none;
+  background-image: url("../../images/cross.svg");
+  /*  background-position: 50% 50%; */
+  background-position-y: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  /*  padding-right: 42px; */
+  transition: 0.3s ease-out;
+  position: relative;
+  top: -8px;
+  left: -7px;
+}
+
+.card__delete-btn-img:hover {
+  scale: 1.2;
+}
+
+.card__time {
+  padding-top: 0px;
+  margin-top: 17px;
+  font-family: "Inter", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13.31px;
+  color: #8B8B8B;
+  padding-left: 16px;
+}
+
+@media screen and (max-width: 1000px) {
+  .card__img {
+
+    height: 190px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .card__img {
+    height: 168px;
+  }
+
+  .card__caption {
+    height: 15px;
+    gap: 36px;
+    margin-top: 14px;
+  }
+
+  .card__name {
+    font-size: 12px;
+    line-height: 15.73px;
+  }
+
+  .card__time {
+    margin-top: 14px;
+    font-size: 10px;
+    line-height: 13.31px;
+    color: #8B8B8B;
+  }
+
+  .card__btn_action_delete {
+    opacity: 1;
+  }
+
+  .card__delete-btn-img {
+    left: 7px;
+  }
+}
