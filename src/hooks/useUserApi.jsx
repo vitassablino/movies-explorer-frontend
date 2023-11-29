@@ -17,6 +17,7 @@ export const useUserApi = () => {
   const resetErrors = useCallback(() => {
     setError(false);
     setErrorMessage('');
+    setFulfilled(false);
   }, [ setError, setErrorMessage ]);
 
   const handleUpdateUserData = useCallback((userInfo) => {
@@ -39,6 +40,7 @@ export const useUserApi = () => {
     userApi.getUserData()
       .then(({ name, email }) => {
         setCurrentUser(() => ({ isLoggedIn: true, name, email }));
+        navigate(AppRoutes.movies, { replace: true });
       })
       .catch(err => {
         setError(true);
@@ -54,7 +56,6 @@ export const useUserApi = () => {
           if (data.token) {
             localStorage.setItem('token', data.token);
             handleLoginState();
-            navigate(AppRoutes.movies, { replace: true });
             setFulfilled(true);
           }
         }
@@ -107,5 +108,6 @@ export const useUserApi = () => {
     isFulfilled,
     isError,
     errorMessage,
+    resetErrors,
   };
 };

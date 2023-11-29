@@ -50,6 +50,10 @@ select:-webkit-autofill:focus {
   margin-top: 20px;
 }
 
+.form__input-wrapper_type_auth {
+  margin-top: 4px;
+}
+
 .form__input-wrapper:first-of-type {
   padding-top: 0;
   margin-top: 0;
@@ -83,6 +87,16 @@ select:-webkit-autofill:focus {
   line-height: 16px;
   color: white;
   box-sizing: border-box;
+}
+
+.form__input_type_auth {
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+.form__input_type_auth:focus {
+  outline: 1px solid #8b8b8b;
 }
 
 .form__input-name {
@@ -134,7 +148,7 @@ select:-webkit-autofill:focus {
   padding: 1px 0 2px 5px;
 }
 
-.form__input-error:first-of-type {
+.form__input-error_type_bordered {
   border-bottom: 1px solid #424242;
 }
 
@@ -194,6 +208,13 @@ select:-webkit-autofill:focus {
 .form__errors-wrapper {
   display: flex;
   justify-content: center;
+}
+
+.form__loader-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 170px;
 }
 
 .form__status {

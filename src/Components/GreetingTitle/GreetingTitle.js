@@ -1,4 +1,5 @@
 import './GreetingTitle.css';
+import { memo } from 'react';
 
 function GreetingTitle({ title, place }) {
   return (
@@ -12,4 +13,4 @@ function GreetingTitle({ title, place }) {
   );
 }
 
-export default GreetingTitle;
+export default memo(GreetingTitle);

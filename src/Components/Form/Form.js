@@ -1,5 +1,6 @@
 import './Form.css';
 import { memo } from 'react';
+import { Loader } from '../Loader/Loader';
 
 function Form(props) {
   const {
@@ -10,6 +11,7 @@ function Form(props) {
     buttonText,
     isTyping,
     children,
+    isLoading,
     ...otherProps
   } = props;
 
@@ -20,6 +22,24 @@ function Form(props) {
     } else {
       return !isValid;
     }
+  }
+
+  if (isLoading) {
+    return (
+      <form
+        action="#"
+        name={`${name}`}
+        id={`${name}`}
+        className={`form form_place_${name}`}
+        noValidate
+        onSubmit={onSubmit}
+      >
+        {children}
+        <div className="form__loader-wrapper">
+          <Loader />
+        </div>
+      </form>
+    );
   }
 
   return (

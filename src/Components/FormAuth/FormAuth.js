@@ -10,9 +10,10 @@ function FormAuth(props) {
     title,
     name,
     onSubmit,
-    isFormValid,
+    isValid,
     buttonText,
     children,
+    isLoading,
     ...otherProps
   } = props;
   return (
@@ -22,7 +23,8 @@ function FormAuth(props) {
       <Form
         name={name}
         onSubmit={onSubmit}
-        isFormValid={isFormValid}
+        isValid={isValid}
+        isLoading={isLoading}
         buttonText={buttonText}
       >
         {children}
@@ -36,7 +38,7 @@ function FormAuth(props) {
         </p>
       ) : (
         <p className="form-auth__text">
-          Ещё не зарегистрированы?{' '}
+          {'Ещё не зарегистрированы? '}
           <Link to="/signup" className="form-auth__link">
             Регистрация
           </Link>

@@ -1,13 +1,27 @@
 import useFormValidation from '../../hooks/useFormValidation';
 import './Signup.css';
 import FormAuth from '../FormAuth/FormAuth';
+import { useUserApi } from '../../hooks/useUserApi';
+import { memo, useCallback, useEffect } from 'react';
 
 function Signup() {
-  const { values, errors, isFormValid, onChange } = useFormValidation();
+  const { values, errors, isValid, handleChange } = useFormValidation();
+  const {
+    handleRegister,
+    isLoading,
+    errorMessage,
+    resetErrors,
+  } = useUserApi();
 
-  function handleSubmit(e) {
+  useEffect(() => {
+    resetErrors();
+  }, [ values, resetErrors ]);
+
+  const handleSubmit = useCallback((e) => {
     e.preventDefault();
-  }
+    const { name, email, password } = values;
+    handleRegister({ name, email, password });
+  }, [ values, handleRegister ]);
 
   return (
     <main className="signup">
@@ -15,13 +29,14 @@ function Signup() {
         title="Добро пожаловать!"
         name="signup"
         onSubmit={handleSubmit}
-        isFormValid={isFormValid}
+        isValid={isValid}
+        isLoading={isLoading}
         buttonText="Зарегистрироваться"
       >
-        <label className="form__input-wrapper">
+        <label className="form__input-wrapper form__input-wrapper_type_auth">
           Имя
           <input
-            className={`form__input ${
+            className={`form__input form__input_type_auth ${
               errors.name ? 'form__input_style_error' : ''
             }`}
             type="text"
@@ -31,66 +46,73 @@ function Signup() {
             minLength="2"
             maxLength="30"
             id="name-input"
-            onChange={onChange}
+            onChange={handleChange}
             value={values.name ?? ''}
+            placeholder="Введите имя"
+            autoComplete="username"
           />
           <span
             className={`form__input-error ${
               errors.name ? 'form__input-error_active' : ''
             }`}
           >
-            {errors.name ?? ''}
+            {errors.name}
           </span>
         </label>
-        <label className="form__input-wrapper">
+        <label className="form__input-wrapper form__input-wrapper_type_auth">
           E-mail
           <input
-            className={`form__input ${
+            className={`form__input form__input_type_auth ${
               errors.email ? 'form__input_style_error' : ''
             }`}
-            type="text"
+            type="email"
             name="email"
             form="signup"
             required
             id="email-input"
-            onChange={onChange}
+            onChange={handleChange}
             value={values.email ?? ''}
+            placeholder="Введите email"
+            autoComplete="email"
           />
           <span
             className={`form__input-error ${
               errors.email ? 'form__input-error_active' : ''
             }`}
           >
-            {errors.email ?? ''}
+            {errors.email}
           </span>
         </label>
-        <label className="form__input-wrapper">
+        <label className="form__input-wrapper form__input-wrapper_type_auth">
           Пароль
           <input
-            className={`form__input ${
+            className={`form__input form__input_type_auth ${
               errors.password ? 'form__input_style_error' : ''
             }`}
             type="password"
             name="password"
             form="signup"
             required
-            minLength="6"
+            minLength="8"
             maxLength="30"
             id="password-input"
-            onChange={onChange}
+            onChange={handleChange}
             value={values.password ?? ''}
+            placeholder="Введите пароль"
+            autoComplete="new-password"
           />
           <span
             className={`form__input-error ${
               errors.password ? 'form__input-error_active' : ''
             }`}
           >
-            {errors.password ?? ''}
+            {errors.password}
           </span>
         </label>
+        <span className="form__input-error">{errorMessage}</span>
       </FormAuth>
     </main>
   );
 }
 
-export default Signup;
+export default memo(Signup);

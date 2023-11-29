@@ -3,12 +3,13 @@ import './User.css';
 import Form from '../Form/Form';
 import GreetingTitle from '../GreetingTitle/GreetingTitle';
 import Header from '../Header/Header';
-import { useCallback, useContext, useEffect } from 'react';
+import { memo, useCallback, useContext, useEffect, useState } from 'react';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import { useUserApi } from '../../hooks/useUserApi';
 import { Loader } from '../Loader/Loader';
 
 function User() {
+  const [ fetchStatus, setFetchStatus ] = useState('');
   const { currentUser } = useContext(CurrentUserContext);
   const { values, setValues, errors, isValid, setIsValid, handleChange } = useFormValidation();
   const {
@@ -17,8 +18,17 @@ function User() {
     isLoading,
     isError,
     errorMessage,
-    isFulfilled
+    isFulfilled,
+    resetErrors,
   } = useUserApi();
+
+  useEffect(() => {
+    if (isError) setFetchStatus(errorMessage);
+
+    if (isFulfilled) setFetchStatus('Профиль успешно обновлен!');
+
+    setTimeout(() => setFetchStatus(''), 2000);
+  }, [isError, isFulfilled]);
 
   useEffect(() => {
     if (isError) {
@@ -38,12 +48,6 @@ function User() {
   useEffect(() => {
     if (currentUser.name === values.name && currentUser.email === values.email) setIsValid(false);
   }, [ values, setIsValid, currentUser ]);
-
-  const renderStatus = useCallback(() => {
-    if (isError) return errorMessage;
-
-    if (isFulfilled) return 'Профиль успешно обновлен!';
-  }, [ isError, errorMessage, isFulfilled ]);
 
   const renderButtons = useCallback(() => {
     if (isLoading) {
@@ -66,6 +70,7 @@ function User() {
     e.preventDefault();
     const { name, email } = values;
     handleUpdateUserData({ name, email });
+    resetErrors();
   }, [ values, handleUpdateUserData ]);
 
   return (
@@ -95,7 +100,7 @@ function User() {
               />
               <span className="form__input-name">Имя</span>
             </label>
-            <span className={`form__input-error`}>
+            <span className={`form__input-error form__input-error_type_bordered`}>
             {errors.name}
             </span>
             <label className="form__input-wrapper form__input-wrapper_user-edit">
@@ -121,7 +126,7 @@ function User() {
             >
               <span
                 className={`form__status ${isError ? 'form__status_type_error' : 'form__status_type_fulfilled'}`}>
-                {renderStatus()}
+                {fetchStatus}
               </span>
             </div>
             <div className={`user__btns-wrapper`}>
@@ -134,4 +139,4 @@ function User() {
   );
 }
 
-export default User;
+export default memo(User);
