@@ -14,7 +14,6 @@ function FormAuth(props) {
     buttonText,
     children,
     isLoading,
-    ...otherProps
   } = props;
   return (
     <section className="form-auth">

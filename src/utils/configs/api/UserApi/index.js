@@ -3,8 +3,9 @@ const BASE_URL = 'https://api.movies-explorer.akula.nomoredomainsrocks.ru';
 /* const BASE_URL = 'http://localhost:3001' */
 
 const errorMessages = {
-  401: 'Неверные данные для входа',
+  401: 'Неверные данные для входа.',
   409: 'Пользователь с таким email уже существует.',
+  429: 'Слишком много попыток, повторите позднее.',
   default: 'Проблема соединения. Повторите попытку позже.',
 };
 

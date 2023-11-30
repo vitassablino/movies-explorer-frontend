@@ -6,10 +6,11 @@ import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import { routerConfig } from '../../utils/configs/router';
 import mainApi from '../../utils/configs/api/MainApi';
 import { MoviesContext } from '../../contexts/MoviesContext';
+import { LOCALSTORAGE_TOKEN } from '../../utils/constants';
 
 function App() {
   const [ currentUser, setCurrentUser ] = useState({
-    isLoggedIn: !!localStorage.getItem('token'),
+    isLoggedIn: !!localStorage.getItem(LOCALSTORAGE_TOKEN),
   });
   const [ movies, setMovies ] = useState({
     data: [],         // массив с фильмами

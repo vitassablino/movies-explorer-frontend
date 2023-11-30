@@ -1,11 +1,14 @@
-import { useLocation } from 'react-router-dom';
+import { useMatch } from 'react-router-dom';
 import './Card.css';
-import { useState } from 'react';
+import { useMoviesApi } from '../../hooks/useMoviesApi';
+import { AppRoutes } from '../../utils/configs/router';
+import { memo, useCallback } from 'react';
 
-function Card({ card /* , isLiked, onCardLike  */ }) {
-  const location = useLocation();
+function Card({ movie, isSaved }) {
+  const isSavedMoviePath = useMatch(AppRoutes.savedMovies);
+  const { handleSaveMovie, handleDeleteMovie } = useMoviesApi();
 
-  function handleCalcTime(time) {
+  const handleCalcTime = useCallback((time) => {
     const minutes = time % 60;
     const hours = (time - minutes) / 60;
     if (hours < 1) {
@@ -13,49 +16,65 @@ function Card({ card /* , isLiked, onCardLike  */ }) {
     } else {
       return `${hours}ч ${minutes}м`;
     }
-  }
+  }, []);
 
-  const [ isLiked, setLike ] = useState(false);
+  const openMovieTrailer = useCallback((link) => window.open(link, '_blank'), []);
 
-  function handleCardLike() {
-    setLike(!isLiked);
-    console.log('like');
-  }
+  const renderBtn = useCallback(() => {
+    if (isSavedMoviePath) {
+
+      return <button
+        className="card__btn card__btn_action_delete"
+        type="button"
+        aria-label="Лайк"
+        onClick={() => handleDeleteMovie(movie._id)}
+      >
+        <div
+          className={`card__delete-btn-img`}
+        ></div>
+      </button>;
+    }
+
+    if (!isSavedMoviePath && isSaved) {
+      return <button
+        className="card__btn"
+        type="button"
+        aria-label="Лайк"
+        onClick={() => handleDeleteMovie(movie._id)}
+      >
+        <div
+          className="card__like-btn-img card__like-btn-img_active_active"
+        ></div>
+      </button>;
+    }
+
+    return <button
+      className="card__btn"
+      type="button"
+      aria-label="Лайк"
+      onClick={() => handleSaveMovie(movie)}
+    >
+      <div
+        className="card__like-btn-img"
+      ></div>
+    </button>;
+  }, [ isSavedMoviePath, isSaved, handleDeleteMovie, handleSaveMovie, movie ]);
 
   return (
     <li className="card">
-      <img className="card__img" src={card.image.url} alt={card.name} />
+      <img
+        className="card__img"
+        src={isSavedMoviePath ? `${movie.image}` : `https://api.nomoreparties.co/${movie.image.url}`}
+        alt={movie.nameRU}
+        onClick={() => openMovieTrailer(movie.trailerLink)}
+      />
       <div className="card__caption">
-        <p className="card__name">{card.name}</p>
-        {location.pathname === '/movies' ? (
-          <button
-            className="card__btn"
-            type="button"
-            aria-label="Лайк"
-            onClick={handleCardLike}
-          >
-            <div
-              className={`card__like-btn-img ${
-                isLiked ? 'card__like-btn-img_active_active' : ''
-              }`}
-            ></div>
-          </button>
-        ) : (
-          <button
-            className="card__btn card__btn_action_delete"
-            type="button"
-            aria-label="Лайк"
-            onClick={handleCardLike}
-          >
-            <div
-              className={`card__delete-btn-img `}
-            ></div>
-          </button>
-        )}
+        <p className="card__name">{movie.nameRU}</p>
+        {renderBtn()}
       </div>
-      <p className="card__time">{handleCalcTime(card.time)}</p>
+      <p className="card__time">{handleCalcTime(movie.duration)}</p>
     </li>
   );
 }
 
-export default Card;
+export default memo(Card);

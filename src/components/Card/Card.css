@@ -3,6 +3,9 @@
   display: flex;
   flex-direction: column;
   background-color: #222222;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.08);
 }
 
 .card__img {
@@ -10,6 +13,13 @@
   object-fit: cover;
   font-family: "Inter", "Arial", sans-serif;
   color: white;
+  transition: all 0.3s ease;
+}
+
+.card__img:hover {
+  opacity: 0.8;
+  cursor: pointer;
+  transform: translate(0, -3px);
 }
 
 .card__caption {
@@ -25,7 +35,7 @@
   font-family: "Inter", "Arial", sans-serif;
   font-weight: 500;
   font-size: 13px;
-  line-height: 15.73px;
+  line-height: 16px;
   color: white;
   padding-left: 16px;
   white-space: nowrap;
@@ -48,6 +58,12 @@
 
 .card:hover .card__btn_action_delete {
   opacity: 1;
+}
+
+@media (pointer: coarse) {
+  .card__btn_action_delete {
+    opacity: 1;
+  }
 }
 
 .card__like-btn-img {
@@ -91,19 +107,18 @@
 }
 
 .card__time {
-  padding-top: 0px;
+  padding-top: 0;
   margin-top: 17px;
   font-family: "Inter", "Arial", sans-serif;
   font-weight: 400;
   font-size: 11px;
-  line-height: 13.31px;
+  line-height: 13px;
   color: #8B8B8B;
   padding-left: 16px;
 }
 
 @media screen and (max-width: 1000px) {
   .card__img {
-
     height: 190px;
   }
 }
@@ -121,13 +136,13 @@
 
   .card__name {
     font-size: 12px;
-    line-height: 15.73px;
+    line-height: 16px;
   }
 
   .card__time {
     margin-top: 14px;
     font-size: 10px;
-    line-height: 13.31px;
+    line-height: 13px;
     color: #8B8B8B;
   }
 

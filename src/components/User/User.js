@@ -28,7 +28,7 @@ function User() {
     if (isFulfilled) setFetchStatus('Профиль успешно обновлен!');
 
     setTimeout(() => setFetchStatus(''), 2000);
-  }, [isError, isFulfilled]);
+  }, [ isError, isFulfilled, errorMessage ]);
 
   useEffect(() => {
     if (isError) {
@@ -71,7 +71,7 @@ function User() {
     const { name, email } = values;
     handleUpdateUserData({ name, email });
     resetErrors();
-  }, [ values, handleUpdateUserData ]);
+  }, [ values, handleUpdateUserData, resetErrors ]);
 
   return (
     <>

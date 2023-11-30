@@ -12,7 +12,6 @@ function Form(props) {
     isTyping,
     children,
     isLoading,
-    ...otherProps
   } = props;
 
   /* Обработчик отключения кнопки */

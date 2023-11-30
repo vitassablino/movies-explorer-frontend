@@ -4,6 +4,7 @@ import { CurrentUserContext } from '../contexts/CurrentUserContext';
 import { useNavigate } from 'react-router-dom';
 import { MoviesContext } from '../contexts/MoviesContext';
 import { AppRoutes } from '../utils/configs/router';
+import { LOCALSTORAGE_TOKEN, LOCALSTORAGE_USERID } from '../utils/constants';
 
 export const useUserApi = () => {
   const [ isLoading, setLoading ] = useState(false);
@@ -54,7 +55,7 @@ export const useUserApi = () => {
     userApi.authorize({ email, password })
       .then((data) => {
           if (data.token) {
-            localStorage.setItem('token', data.token);
+            localStorage.setItem(LOCALSTORAGE_TOKEN, data.token);
             handleLoginState();
             setFulfilled(true);
           }
@@ -73,9 +74,9 @@ export const useUserApi = () => {
     resetErrors();
     setLoading(true);
     userApi.register({ name, email, password })
-      .then((res) => {
-          if (res) {
-            localStorage.setItem('_id', res._id);
+      .then(({ _id }) => {
+          if (_id) {
+            localStorage.setItem(LOCALSTORAGE_USERID, _id);
             handleLogin({ email, password });
             setFulfilled(true);
           }

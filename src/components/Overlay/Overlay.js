@@ -1,4 +1,5 @@
 import './Overlay.css';
+import { memo } from 'react';
 
 function Overlay({ isActive, onClose, ...props }) {
 
@@ -18,4 +19,4 @@ function Overlay({ isActive, onClose, ...props }) {
   );
 }
 
-export default Overlay;
+export default memo(Overlay);

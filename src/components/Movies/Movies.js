@@ -3,18 +3,35 @@ import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import { useSearch } from '../../hooks/useSearch';
+import { memo } from 'react';
 
-function Movies({ cards, onFilterChange, isFilterOn, isLiked, onCardLike }) {
+function Movies() {
+  const {
+    filteredMovies,
+    handleSearch,
+    isLoading,
+    errorMessage,
+    handleChangePage,
+    searchPage
+  } = useSearch();
+
   return (
     <>
       <Header />
       <main className="movies">
-        <SearchForm onFilterChange={onFilterChange} isFilterOn={isFilterOn} />
-        <MoviesCardList cards={cards} isLiked={isLiked} onCardLike={onCardLike} />
+        <SearchForm handleSearch={handleSearch} isLoading={isLoading} />
+        <MoviesCardList
+          movies={filteredMovies}
+          isLoading={isLoading}
+          errorMessage={errorMessage}
+          handleChangePage={handleChangePage}
+          searchPage={searchPage}
+        />
       </main>
       <Footer />
     </>
   );
 }
 
-export default Movies;
+export default memo(Movies);

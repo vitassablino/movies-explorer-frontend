@@ -1,7 +1,7 @@
 import './FilterCheckbox.css';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { memo } from 'react';
 
-function FilterCheckbox({ onFilterChange, isFilterOn }) {
+function FilterCheckbox({ onFilterChange, isFilterOn, isLoading }) {
 
 
   return (
@@ -12,8 +12,9 @@ function FilterCheckbox({ onFilterChange, isFilterOn }) {
         form="search"
         name="switch"
         type="checkbox"
-        value={isFilterOn}
-        onChange={(evt) => onFilterChange(evt.target.checked)}
+        checked={isFilterOn}
+        onChange={onFilterChange}
+        disabled={isLoading}
       />
       <span className="filter-checkbox__button"></span>
       Короткометражки
@@ -21,4 +22,4 @@ function FilterCheckbox({ onFilterChange, isFilterOn }) {
   );
 }
 
-export default FilterCheckbox;
+export default memo(FilterCheckbox);

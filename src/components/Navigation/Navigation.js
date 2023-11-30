@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import './Navigation.css';
+import { memo } from 'react';
 
 function Navigation({ isMenuOpen, onClose }) {
   const location = useLocation();
@@ -47,4 +48,4 @@ function Navigation({ isMenuOpen, onClose }) {
   );
 }
 
-export default Navigation;
+export default memo(Navigation);
