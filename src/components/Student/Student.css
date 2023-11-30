@@ -65,6 +65,7 @@
   color: white;
   text-decoration: none;
   transition: .3s ease-in-out;
+  padding-top: 99px;
 }
 
 .student__link:hover {
@@ -74,13 +75,19 @@
 .student__photo {
   width: 270px;
   grid-area: photo;
+  border-radius: 10px;
 }
 
+@media screen and (max-width: 1024px) {
+  .student__link {
+    padding-top: 87px;
+  }
+}
 
 @media screen and (max-width: 760px) {
   .student__about {
     grid-template-columns: 1fr;
-    grid-template-rows: 352px repeat(4, min-content);
+    grid-template-rows: 1fr repeat(4, min-content);
     grid-template-areas:
         "photo"
         "name"
@@ -94,7 +101,7 @@
   }
 
   .student__link {
-    margin-top: 39px;
+    padding-top: 40px;
   }
 
   .student__photo {
