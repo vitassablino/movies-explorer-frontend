@@ -10,3 +10,6 @@
 Ссылка на бэк проекта: https://api.movies-explorer.akula.nomoredomainsrocks.ru/
 
 IP: 5.35.83.148
+
+
+Ссылка на PR: https://github.com/vitassablino/movies-explorer-frontend/pull/2/files
