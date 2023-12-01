@@ -16,7 +16,6 @@
   opacity: 0;
   width: 100%;
   height: 100%;
-
 }
 
 .filter-checkbox__button {
@@ -61,6 +60,7 @@
 @media screen and (max-width: 1000px) {
   .filter-checkbox {
     gap: 12px;
+    padding-top: 20px;
   }
 }
 

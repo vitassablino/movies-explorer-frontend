@@ -111,8 +111,7 @@
 
   .search-form__form {
     flex-direction: column;
-    gap: 39px;
-    padding-bottom: 50px;
+    gap: 20px;
   }
 
   .search-form__search {
@@ -126,12 +125,6 @@
     padding-right: 14px;
     padding-left: 14px;
   }
-
-  .search-form__form {
-    gap: 42px;
-    padding-bottom: 49px;
-  }
-
 
   .search-form__search {
     padding-left: 16px;
