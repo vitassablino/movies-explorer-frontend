@@ -72,7 +72,7 @@
 
 }
 
-@media screen and (max-width: 765px) {
+@media screen and (max-width: 480px) {
   .movies-card-list {
     padding-top: 50px;
     padding-right: 10px;

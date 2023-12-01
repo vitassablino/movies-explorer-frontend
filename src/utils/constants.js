@@ -8,6 +8,7 @@ export const LOCALSTORAGE_SEARCH_DATA = 'movies';
 
 export const RENDER_CONFIG = {
   desktop: {
+    name: 'desktop',
     width: 1000,
     movies: {
       total: 12,
@@ -15,13 +16,15 @@ export const RENDER_CONFIG = {
     },
   },
   tablet: {
-    width: 765,
+    name: 'tablet',
+    width: 480,
     movies: {
       total: 8,
       more: 2,
     },
   },
   mobile: {
+    name: 'mobile',
     width: 320,
     movies: {
       total: 5,

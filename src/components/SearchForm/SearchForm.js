@@ -6,11 +6,12 @@ import { useMoviesApi } from '../../hooks/useMoviesApi';
 import { useMatch } from 'react-router-dom';
 import { AppRoutes } from '../../utils/configs/router';
 import { useSearch } from '../../hooks/useSearch';
+import { RENDER_CONFIG } from '../../utils/constants';
 
 
 function SearchForm(props) {
   const [ animationStatus, setAnimationStatus ] = useState(false);
-  const { handleSearch, isLoading } = props;
+  const { handleSearch, isLoading, device, setMoviesForRender } = props;
   const { savedMovies } = useContext(MoviesContext);
   const { getAllMovies } = useMoviesApi();
 
@@ -42,8 +43,19 @@ function SearchForm(props) {
     }
     toAnimate();
     const movieList = isMoviePath ? await getAllMovies() : savedMovies.data;
+    setMoviesForRender(RENDER_CONFIG[device].movies.total);
     handleSearch(movieList, string, checkbox);
-  }, [ string, checkbox, getAllMovies, handleSearch, isMoviePath, savedMovies.data, toAnimate ]);
+  }, [
+    string,
+    checkbox,
+    getAllMovies,
+    handleSearch,
+    isMoviePath,
+    savedMovies.data,
+    toAnimate,
+    setMoviesForRender,
+    device
+  ]);
 
   const handleCheckboxChange = useCallback(async (e) => {
     if (isMoviePath && !searchParams.string) {

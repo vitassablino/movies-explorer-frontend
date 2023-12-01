@@ -22,9 +22,6 @@ export const useSearch = () => {
   const [ isLoading, setIsLoading ] = useState(false);
   const [ errorMessage, setErrorMessage ] = useState('');
 
-  // пагинация поиска
-  const [ searchPage, setSearchPage ] = useState(0);
-
   // мэтчинг страниц
   const isMoviePath = useMatch(AppRoutes.movies);
   const isSavedMoviePath = useMatch(AppRoutes.savedMovies);
@@ -64,15 +61,11 @@ export const useSearch = () => {
     setFilteredMovies(moviesData);
   }, [ setSearchParams, setFilteredMovies, isMoviePath ]);
 
-
-  const handleChangePage = useCallback(() => setSearchPage((page) => page + 1), [ setSearchPage ]);
-
   // логика поиска
   const handleSearch = useCallback((movies, searchString, isShortMovie) => {
     setIsLoading(true);
     // обнуление стейтов
     setErrorMessage('');
-    setSearchPage(0);
 
     // получаем новый отфильтрованный массив
     const newMovieList = filterMovies(movies, searchString, isShortMovie);
@@ -89,7 +82,7 @@ export const useSearch = () => {
       }
     }, 200);
 
-  }, [ setSearchPage, setFilteredMovies, filterMovies, saveSearchResults, setErrorMessage, setIsLoading ]);
+  }, [ setFilteredMovies, filterMovies, saveSearchResults, setErrorMessage, setIsLoading ]);
 
   return {
     filteredMovies,
@@ -98,7 +91,5 @@ export const useSearch = () => {
     setSearchParams,
     isLoading,
     errorMessage,
-    searchPage,
-    handleChangePage,
   };
 };
