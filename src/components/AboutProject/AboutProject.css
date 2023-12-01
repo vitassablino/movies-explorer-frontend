@@ -1,0 +1,144 @@
+.about-project {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 110px 70px;
+  box-sizing: border-box;
+  background-color: #202020;
+}
+
+.about-project__two-columns {
+  width: 100%;
+  display: flex;
+  gap: 53px;
+  margin-top: 70px;
+}
+
+.about-project__column {
+  max-width: 550px;
+}
+
+
+.about-project__subtitle {
+  margin: 0;
+  font-family: "Inter", "Arial", sans-serif;;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 27px;
+  letter-spacing: -0.04em;
+  color: white;
+}
+
+.about-project__text {
+  margin-top: 26px;
+  margin-bottom: 0;
+  font-family: "Inter", "Arial", sans-serif;;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: white;
+}
+
+.about-project__grid {
+  width: 100%;
+  margin-top: 110px;
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+
+.about-project__stage {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-project__week {
+  margin: 0;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  box-sizing: border-box;
+  font-family: "Inter", "Arial", sans-serif;;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: black;
+  background-color: #3DDC84;
+}
+
+.about-project__week-grey {
+  color: white;
+  background-color: #303030
+}
+
+.about-project__stage-caption {
+  margin-top: 15px;
+  margin-bottom: 0;
+  font-family: "Inter", "Arial", sans-serif;;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #8B8B8B;
+}
+
+@media screen and (max-width: 1000px) {
+  .about-project {
+    padding: 90px 50px;
+  }
+
+  .about-project__two-columns {
+    gap: 37px;
+  }
+
+  .about-project__text {
+    margin-top: 22px;
+    font-size: 12px;
+    line-height: 17px;
+  }
+
+  .about-project__grid {
+    margin-top: 93px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .about-project {
+    padding: 70px 18px;
+  }
+
+  .about-project__two-columns {
+    flex-direction: column;
+    margin-top: 60px;
+    gap: 56px;
+  }
+
+  .about-project__subtitle {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .about-project__text {
+    margin-top: 16px;
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .about-project__grid {
+    margin-top: 60px;
+    grid-template-columns: 35% 65%;
+
+  }
+
+
+  .about-project__week {
+    padding-top: 11px;
+    padding-bottom: 11px;
+    font-size: 11px;
+    line-height: 13px;
+  }
+
+  .about-project__stage-caption {
+    margin-top: 10px;
+    font-size: 11px;
+    line-height: 13px;
+  }
+}

@@ -1,0 +1,7 @@
+@import url("./vendor/normalize.css");
+@import url("./vendor/fonts/fonts.css");
+
+html, body {
+  scrollbar-gutter: stable;
+  background-color: #202020;
+}
